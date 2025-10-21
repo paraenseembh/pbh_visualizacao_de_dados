@@ -1,11 +1,12 @@
 
-# Visualização de Dados - Orçamento de Segurança Alimentar BH
+# Visualização de Dados - Orçamentos temáticos da PBH
 
-Projeto de extensão para desenvolvimento de plataforma de visualização de dados orçamentários da Prefeitura de Belo Horizonte, com foco no Orçamento Temático de Segurança Alimentar.
+Projeto de extensão para desenvolvimento de plataforma de visualização de dados orçamentários da Prefeitura de Belo Horizonte, com foco nos Orçamentos Temáticos.
 
 ## Sobre o Projeto
 
 Este projeto visa modernizar os processos de planejamento e monitoramento orçamentário da equipe de planejamento municipal através da criação de dashboards e painéis analíticos interativos.
+Além disso, buscamos promover uma visualização simples, limpa, clara e adequada desses dados para toda população.
 
 ### Objetivos
 
