@@ -1,0 +1,165 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{listings}
+\geometry{margin=2cm}
+
+\title{Modelagem de Orçamentos Temáticos com Índices Padronizados:\\Sistema de Classificação 20-50-85-100}
+\author{Arquitetura de Dados - Orçamento Público}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Sistema de Índices Padronizados}
+
+\subsection{Conceito Fundamental}
+
+A classificação de dotações orçamentárias em orçamentos temáticos utiliza \textbf{índices discretos padronizados} ao invés de percentuais livres. Os índices válidos são:
+
+\begin{center}
+\begin{tabular}{|c|l|p{8cm}|}
+\hline
+\textbf{Índice} & \textbf{Classificação} & \textbf{Significado} \\
+\hline
+20 & Tangencial & Relação periférica ou indireta com o orçamento temático \\
+\hline
+50 & Moderada & Relação significativa, mas não predominante \\
+\hline
+85 & Predominante & Relação forte e prioritária com o orçamento temático \\
+\hline
+100 & Exclusiva & Dotação totalmente dedicada ao orçamento temático \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Exemplos Práticos}
+
+\subsubsection{Exemplo 1: Construção de Centro Comunitário}
+
+\textbf{Dotação}: R\$ 1.000.000,00
+
+\textbf{Classificação}:
+\begin{itemize}
+    \item \textbf{OCA (50)}: 50\% das atividades serão para crianças e adolescentes
+    \item \textbf{IDOSO (20)}: 20\% contempla atividades para terceira idade
+    \item \textbf{PCD (20)}: 20\% refere-se a acessibilidade e inclusão
+\end{itemize}
+
+\textbf{Valores alocados}:
+\begin{itemize}
+    \item OCA: R\$ 500.000,00
+    \item IDOSO: R\$ 200.000,00
+    \item PCD: R\$ 200.000,00
+    \item \textbf{Não alocado}: R\$ 100.000,00 (10\% - infraestrutura geral)
+\end{itemize}
+
+\subsubsection{Exemplo 2: Programa de Educação Infantil}
+
+\textbf{Dotação}: R\$ 800.000,00
+
+\textbf{Classificação}:
+\begin{itemize}
+    \item \textbf{OCA (100)}: Programa exclusivamente voltado para crianças
+\end{itemize}
+
+\textbf{Valores alocados}:
+\begin{itemize}
+    \item OCA: R\$ 800.000,00
+\end{itemize}
+
+\subsubsection{Exemplo 3: Hospital Municipal}
+
+\textbf{Dotação}: R\$ 5.000.000,00
+
+\textbf{Classificação}:
+\begin{itemize}
+    \item \textbf{OCA (20)}: Atendimento pediátrico
+    \item \textbf{IDOSO (20)}: Atendimento geriatria
+    \item \textbf{MULHER (20)}: Saúde da mulher
+    \item \textbf{PCD (20)}: Reabilitação
+\end{itemize}
+
+\textbf{Valores alocados}:
+\begin{itemize}
+    \item OCA: R\$ 1.000.000,00
+    \item IDOSO: R\$ 1.000.000,00
+    \item MULHER: R\$ 1.000.000,00
+    \item PCD: R\$ 1.000.000,00
+    \item \textbf{Não alocado}: R\$ 1.000.000,00 (20\% - clínica geral)
+\end{itemize}
+
+\section{Estrutura de Dados Atualizada}
+
+\subsection{Tabela de Domínio: D\_INDICE\_ALOCACAO}
+
+Esta tabela define os índices padronizados aceitos pelo sistema:
+
+\begin{lstlisting}[language=SQL, basicstyle=\small\ttfamily]
+CREATE TABLE D_INDICE_ALOCACAO (
+    idD_INDICE_ALOCACAO INT PRIMARY KEY,
+    VALOR_INDICE INT NOT NULL UNIQUE,
+    NOME_CLASSIFICACAO VARCHAR(50) NOT NULL,
+    DESCRICAO TEXT,
+    ORDEM_PRIORIDADE INT,
+    STATUS VARCHAR(20) DEFAULT 'ATIVO',
+    
+    CHECK (VALOR_INDICE IN (20, 50, 85, 100))
+);
+\end{lstlisting}
+
+\textbf{Dados iniciais}:
+\begin{lstlisting}[language=SQL, basicstyle=\small\ttfamily]
+INSERT INTO D_INDICE_ALOCACAO VALUES
+(1, 20, 'Tangencial', 
+ 'Relacao periferica ou indireta com o orcamento tematico. ' ||
+ 'Indica que a dotacao contempla o publico-alvo de forma ' ||
+ 'minoritaria ou secundaria.', 
+ 1, 'ATIVO'),
+
+(2, 50, 'Moderada', 
+ 'Relacao significativa, mas nao predominante. ' ||
+ 'A dotacao beneficia o publico-alvo de forma substancial, ' ||
+ 'mas divide recursos com outros grupos.', 
+ 2, 'ATIVO'),
+
+(3, 85, 'Predominante', 
+ 'Relacao forte e prioritaria com o orcamento tematico. ' ||
+ 'A maior parte dos recursos e atividades sao direcionados ' ||
+ 'ao publico-alvo especifico.', 
+ 3, 'ATIVO'),
+
+(4, 100, 'Exclusiva', 
+ 'Dotacao totalmente dedicada ao orcamento tematico. ' ||
+ 'Todos os recursos beneficiam exclusivamente o publico-alvo.', 
+ 4, 'ATIVO');
+\end{lstlisting}
+
+\subsection{Dimensão: D\_ORCAMENTO\_TEMATICO}
+
+Sem alterações significativas:
+
+\begin{lstlisting}[language=SQL, basicstyle=\small\ttfamily]
+CREATE TABLE D_ORCAMENTO_TEMATICO (
+    idD_ORCAMENTO_TEMATICO INT PRIMARY KEY,
+    CODIGO_ORCAMENTO VARCHAR(10) NOT NULL UNIQUE,
+    NOME_ORCAMENTO VARCHAR(100) NOT NULL,
+    SIGLA VARCHAR(10) NOT NULL,
+    DESCRICAO TEXT,
+    BASE_LEGAL VARCHAR(200),
+    PUBLICO_ALVO VARCHAR(100),
+    ANO_IMPLANTACAO INT,
+    STATUS_ORCAMENTO VARCHAR(20) DEFAULT 'ATIVO',
+    EXERCICIO VARCHAR(4)
+);
+\end{lstlisting}
+
+\end{document}
