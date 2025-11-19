@@ -21,28 +21,33 @@
   </notepads>
   <order>
     <hop>
+      <from>Pegar Quadrimestre e Ano</from>
+      <to>Quadrimestre</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Pegar Tabelas</from>
       <to>Pegar Quadrimestre e Ano</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Pegar Quadrimestre e Ano</from>
-      <to>NUM_QUADRIMESTRE</to>
+      <from>Quadrimestre</from>
+      <to>Quadrimestre_Ano</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>NUM_QUADRIMESTRE</from>
-      <to>Ordernar Instancias</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Ordernar Instancias</from>
-      <to>Unique rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Unique rows</from>
+      <from>quadrimestre_ano  cadastrado?</from>
       <to>D_TEMPO</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Quadrimestre_Ano</from>
+      <to>Database lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Database lookup</from>
+      <to>quadrimestre_ano  cadastrado?</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -58,15 +63,23 @@
       <schema_name/>
     </partitioning>
     <commit>1000</commit>
-    <connection>DW</connection>
+    <connection>DESTINO</connection>
     <fields>
       <field>
         <column_name>ano_exercicio_orcamentario</column_name>
-        <stream_name>ANO_EXERCICIO_ORCAMENTARIO</stream_name>
+        <stream_name>ano_exercicio_orcamentario</stream_name>
       </field>
       <field>
         <column_name>quadrimestre</column_name>
-        <stream_name>NUM_QUADRIMESTRE</stream_name>
+        <stream_name>quadrimestre</stream_name>
+      </field>
+      <field>
+        <column_name>quadrimestre_ano</column_name>
+        <stream_name>quadrimestre_ano</stream_name>
+      </field>
+      <field>
+        <column_name>num_quadrimestre</column_name>
+        <stream_name>num_quadrimestre</stream_name>
       </field>
     </fields>
     <ignore_errors>N</ignore_errors>
@@ -75,7 +88,7 @@
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_monthly>Y</partitioning_monthly>
     <return_keys>N</return_keys>
-    <schema>mydb</schema>
+    <schema>DW</schema>
     <specify_fields>Y</specify_fields>
     <table>D_TEMPO</table>
     <tablename_in_field>N</tablename_in_field>
@@ -84,13 +97,13 @@
     <use_batch>Y</use_batch>
     <attributes/>
     <GUI>
-      <xloc>1056</xloc>
-      <yloc>304</yloc>
+      <xloc>1168</xloc>
+      <yloc>256</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>NUM_QUADRIMESTRE</name>
-    <type>ValueMapper</type>
+    <name>Database lookup</name>
+    <type>DBLookup</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -99,68 +112,31 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>NUM_QUADRIMESTRE</field_to_use>
-    <fields>
-      <field>
-        <source_value>1</source_value>
-        <target_value>1° Quadrimestre</target_value>
-      </field>
-      <field>
-        <source_value>2</source_value>
-        <target_value>2° Quadrimestre</target_value>
-      </field>
-      <field>
-        <source_value>3</source_value>
-        <target_value>3° Quadrimestre</target_value>
-      </field>
-    </fields>
-    <target_field>QUADRIMESTRE</target_field>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <connection>DESTINO</connection>
+    <lookup>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <fail_on_multiple>N</fail_on_multiple>
+      <key>
+        <condition>=</condition>
+        <field>quadrimestre_ano</field>
+        <name>quadrimestre_ano</name>
+      </key>
+      <schema>DW</schema>
+      <table>D_TEMPO</table>
+      <value>
+        <name>quadrimestre_ano</name>
+        <rename>quad_ano_dw</rename>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </value>
+    </lookup>
     <attributes/>
     <GUI>
-      <xloc>736</xloc>
-      <yloc>144</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Ordernar Instancias</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <compress>N</compress>
-    <compress_variables/>
-    <directory>${java.io.tmpdir}</directory>
-    <fields>
-      <field>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <name>ANO_EXERCICIO_ORCAMENTARIO</name>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <name>QUADRIMESTRE</name>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <free_memory/>
-    <sort_prefix>out</sort_prefix>
-    <sort_size>1000000</sort_size>
-    <unique_rows>N</unique_rows>
-    <attributes/>
-    <GUI>
-      <xloc>896</xloc>
-      <yloc>144</yloc>
+      <xloc>752</xloc>
+      <yloc>256</yloc>
     </GUI>
   </transform>
   <transform>
@@ -189,7 +165,7 @@
     <unix>N</unix>
     <fields>
       <field>
-        <name>NUM_QUADRIMESTRE</name>
+        <name>num_quadrimestre</name>
         <type>Integer</type>
         <format/>
         <group/>
@@ -202,7 +178,7 @@
         <currency/>
       </field>
       <field>
-        <name>ANO_EXERCICIO_ORCAMENTARIO</name>
+        <name>ano_exercicio_orcamentario</name>
         <type>Integer</type>
         <format/>
         <group/>
@@ -217,7 +193,7 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>464</xloc>
       <yloc>144</yloc>
     </GUI>
   </transform>
@@ -238,7 +214,7 @@
       <file_required>N</file_required>
       <filemask>.*\.xlsx</filemask>
       <include_subfolders>Y</include_subfolders>
-      <name>/home/ettore/Documentos/PUC/Projeto_III/bases_de_dados/OCA</name>
+      <name>/home/qmd/Documentos/PUC/pbh_visualizacao_de_dados/dados/orcamentos_tematicos/crianca_adolescente/OCA_QUADRIMESTRE</name>
     </file>
     <file>
       <file_required>N</file_required>
@@ -259,8 +235,8 @@
     </GUI>
   </transform>
   <transform>
-    <name>Unique rows</name>
-    <type>Unique</type>
+    <name>Quadrimestre</name>
+    <type>ValueMapper</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -269,28 +245,94 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <count_field/>
-    <count_rows>N</count_rows>
-    <error_description/>
+    <field_to_use>NUM_QUADRIMESTRE</field_to_use>
     <fields>
       <field>
-        <case_insensitive>N</case_insensitive>
-        <name>NUM_QUADRIMESTRE</name>
+        <source_value>1</source_value>
+        <target_value>1° Quadrimestre</target_value>
       </field>
       <field>
-        <case_insensitive>N</case_insensitive>
-        <name>ANO_EXERCICIO_ORCAMENTARIO</name>
+        <source_value>2</source_value>
+        <target_value>2° Quadrimestre</target_value>
       </field>
       <field>
-        <case_insensitive>N</case_insensitive>
-        <name>QUADRIMESTRE</name>
+        <source_value>3</source_value>
+        <target_value>3° Quadrimestre</target_value>
       </field>
     </fields>
-    <reject_duplicate_row>N</reject_duplicate_row>
+    <target_field>quadrimestre</target_field>
     <attributes/>
     <GUI>
-      <xloc>1056</xloc>
+      <xloc>624</xloc>
       <yloc>144</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Quadrimestre_Ano</name>
+    <type>ConcatFields</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <ConcatFields>
+      <removeSelectedFields>N</removeSelectedFields>
+      <targetFieldLength>6</targetFieldLength>
+      <targetFieldName>quadrimestre_ano</targetFieldName>
+    </ConcatFields>
+    <enclosure>"</enclosure>
+    <fields>
+      <field>
+        <length>4</length>
+        <name>ano_exercicio_orcamentario</name>
+        <precision>-1</precision>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>1</length>
+        <name>NUM_QUADRIMESTRE</name>
+        <precision>-1</precision>
+        <type>Integer</type>
+      </field>
+    </fields>
+    <force_enclosure>N</force_enclosure>
+    <separator>_</separator>
+    <attributes/>
+    <GUI>
+      <xloc>752</xloc>
+      <yloc>144</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>quadrimestre_ano  cadastrado?</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>=</function>
+        <leftvalue>quadrimestre_ano</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+        <rightvalue>quad_ano_dw</rightvalue>
+      </condition>
+    </compare>
+    <send_false_to>D_TEMPO</send_false_to>
+    <attributes/>
+    <GUI>
+      <xloc>944</xloc>
+      <yloc>256</yloc>
     </GUI>
   </transform>
   <transform_error_handling>
