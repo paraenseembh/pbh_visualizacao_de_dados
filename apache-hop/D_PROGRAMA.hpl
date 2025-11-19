@@ -1351,13 +1351,13 @@
         <length>-2</length>
         <name>C�DIGO DO PROGRAMA</name>
         <precision>-2</precision>
-        <rename>codigo</rename>
+        <rename>codigo_programa</rename>
       </field>
       <field>
         <length>-2</length>
         <name>NOME DO  PROGRAMA</name>
         <precision>-2</precision>
-        <rename>nome</rename>
+        <rename>nome_programa</rename>
       </field>
       <field>
         <length>-2</length>
@@ -1551,13 +1551,13 @@
         <length>-2</length>
         <name>C�DIGO DO PROGRAMA</name>
         <precision>-2</precision>
-        <rename>codigo</rename>
+        <rename>codigo_programa</rename>
       </field>
       <field>
         <length>-2</length>
         <name>NOME DO  PROGRAMA</name>
         <precision>-2</precision>
-        <rename>nome</rename>
+        <rename>nome_programa</rename>
       </field>
       <field>
         <length>-2</length>
@@ -1751,13 +1751,13 @@
         <length>-2</length>
         <name>C�DIGO DO PROGRAMA</name>
         <precision>-2</precision>
-        <rename>codigo</rename>
+        <rename>codigo_programa</rename>
       </field>
       <field>
         <length>-2</length>
         <name>NOME DO  PROGRAMA</name>
         <precision>-2</precision>
-        <rename>nome</rename>
+        <rename>nome_programa</rename>
       </field>
       <field>
         <length>-2</length>
@@ -1931,15 +1931,45 @@
     <fields>
       <field>
         <length>-2</length>
+        <name>﻿EXERCÍCIO</name>
+        <precision>-2</precision>
+        <rename>exercicio</rename>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>CÓDIGO ÁREA DE RESULTADO</name>
+        <precision>-2</precision>
+        <rename>codigo_area_resultado</rename>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME ÁREA DE RESULTADO</name>
+        <precision>-2</precision>
+        <rename>nome_area_resultado</rename>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>CÓDIGO DO PROGRAMA</name>
+        <precision>-2</precision>
+        <rename>codigo_programa</rename>
+      </field>
+      <field>
+        <length>-2</length>
         <name>NOME DO  PROGRAMA</name>
         <precision>-2</precision>
-        <rename>nome</rename>
+        <rename>nome_programa</rename>
       </field>
       <field>
         <length>-2</length>
         <name>OBJETIVO DO PROGRAMA</name>
         <precision>-2</precision>
         <rename>objetivo</rename>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>PÚBLICO ALVO DO PROGRAMA</name>
+        <precision>-2</precision>
+        <rename>publico_alvo</rename>
       </field>
       <field>
         <length>-2</length>
@@ -1961,48 +1991,6 @@
       </field>
       <field>
         <length>-2</length>
-        <name>DATA FIM DO PROGRAMA</name>
-        <precision>-2</precision>
-        <rename>data_fim</rename>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>UNIDADE GESTORA</name>
-        <precision>-2</precision>
-        <rename>unidade_gestora</rename>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>﻿EXERCÍCIO</name>
-        <precision>-2</precision>
-        <rename>exercicio</rename>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>CÓDIGO ÁREA DE RESULTADO</name>
-        <precision>-2</precision>
-        <rename>codigo_area_resultado</rename>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>NOME ÁREA DE RESULTADO</name>
-        <precision>-2</precision>
-        <rename>nome_area_resultado</rename>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>CÓDIGO DO PROGRAMA</name>
-        <precision>-2</precision>
-        <rename>codigo</rename>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>PÚBLICO ALVO DO PROGRAMA</name>
-        <precision>-2</precision>
-        <rename>publico_alvo</rename>
-      </field>
-      <field>
-        <length>-2</length>
         <name>CLASSIFICAÇÃO DE GOVERNO</name>
         <precision>-2</precision>
         <rename>classificacao_de_governo</rename>
@@ -2012,6 +2000,18 @@
         <name>DATA INÍCIO DO PROGRAMA</name>
         <precision>-2</precision>
         <rename>data_inicio</rename>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>DATA FIM DO PROGRAMA</name>
+        <precision>-2</precision>
+        <rename>data_fim</rename>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>UNIDADE GESTORA</name>
+        <precision>-2</precision>
+        <rename>unidade_gestora</rename>
       </field>
       <field>
         <length>-2</length>
