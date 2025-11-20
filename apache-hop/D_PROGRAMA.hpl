@@ -40,7 +40,141 @@
       <to>Select values 2025</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Select values 2022</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2023</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2024</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2025</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
+      <to>Remover duplicatas</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Remover duplicatas</from>
+      <to>Insert / update</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
+  <transform>
+    <name>Insert / update</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <commit>100</commit>
+    <connection>DESTINO</connection>
+    <lookup>
+      <key>
+        <condition>=</condition>
+        <field>exercicio</field>
+        <name>exercicio</name>
+      </key>
+      <key>
+        <condition>=</condition>
+        <field>codigo_programa</field>
+        <name>codigo_programa</name>
+      </key>
+      <schema>DW</schema>
+      <table>D_PROGRAMA</table>
+      <value>
+        <name>exercicio</name>
+        <rename>exercicio</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>codigo_area_resultado</name>
+        <rename>codigo_area_resultado</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nome_area_resultado</name>
+        <rename>nome_area_resultado</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>codigo_programa</name>
+        <rename>codigo_programa</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>nome_programa</name>
+        <rename>nome_programa</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>objetivo</name>
+        <rename>objetivo</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>publico_alvo</name>
+        <rename>publico_alvo</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>justificativa</name>
+        <rename>justificativa</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>natureza</name>
+        <rename>natureza</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>tipologia</name>
+        <rename>tipologia</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>classificacao_de_governo</name>
+        <rename>classificacao_de_governo</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>data_inicio</name>
+        <rename>data_inicio</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>data_fim</name>
+        <rename>data_fim</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>unidade_gestora</name>
+        <rename>unidade_gestora</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <update_bypassed>N</update_bypassed>
+    <attributes/>
+    <GUI>
+      <xloc>784</xloc>
+      <yloc>240</yloc>
+    </GUI>
+  </transform>
   <transform>
     <name>PPAG 2022</name>
     <type>CSVInput</type>
@@ -57,7 +191,7 @@
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>;</separator>
-    <enclosure/>
+    <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
     <schemaDefinition/>
@@ -129,7 +263,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>455</length>
+        <length>1295</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -151,7 +285,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>887</length>
+        <length>1694</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -162,7 +296,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>735</length>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -173,7 +307,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>1694</length>
+        <length>28</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -184,7 +318,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>563</length>
+        <length>11</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -195,7 +329,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>582</length>
+        <length>16</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -206,7 +340,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>199</length>
+        <length>16</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -217,19 +351,19 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>225</length>
+        <length>73</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>C�DIGO DO INDICADOR</name>
-        <type>String</type>
-        <format/>
+        <type>Integer</type>
+        <format>#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>894</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -250,7 +384,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>283</length>
+        <length>339</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -261,7 +395,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>185</length>
+        <length>52</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -278,13 +412,13 @@
       </field>
       <field>
         <name>VALOR DE REFER�NCIA</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>180</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -294,52 +428,52 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>130</length>
+        <length>16</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>�NDICE ESPERADO ANO 1</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>56</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>�NDICE ESPERADO ANO 2</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>31</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>�NDICE ESPERADO ANO 3</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>113</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>�NDICE ESPERADO ANO 4</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>164</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -349,7 +483,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>237</length>
+        <length>314</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -376,7 +510,7 @@
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>;</separator>
-    <enclosure/>
+    <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
     <schemaDefinition/>
@@ -448,7 +582,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>455</length>
+        <length>1295</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -470,7 +604,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>887</length>
+        <length>1694</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -481,7 +615,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>735</length>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -492,7 +626,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>1694</length>
+        <length>28</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -503,7 +637,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>563</length>
+        <length>11</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -514,7 +648,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>582</length>
+        <length>16</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -525,7 +659,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>150</length>
+        <length>16</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -536,19 +670,19 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>223</length>
+        <length>73</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>C�DIGO DO INDICADOR</name>
-        <type>String</type>
-        <format/>
+        <type>Integer</type>
+        <format>#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>894</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -569,7 +703,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>283</length>
+        <length>339</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -580,7 +714,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>185</length>
+        <length>52</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -597,13 +731,13 @@
       </field>
       <field>
         <name>VALOR DE REFER�NCIA</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>180</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -613,52 +747,52 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>130</length>
+        <length>19</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>�NDICE ESPERADO ANO 1</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>56</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>�NDICE ESPERADO ANO 2</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>31</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>�NDICE ESPERADO ANO 3</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>119</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>�NDICE ESPERADO ANO 4</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>186</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -668,7 +802,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>237</length>
+        <length>314</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -695,7 +829,7 @@
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>	</separator>
-    <enclosure/>
+    <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
     <schemaDefinition/>
@@ -767,7 +901,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>947</length>
+        <length>945</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -888,7 +1022,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>341</length>
+        <length>339</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -987,7 +1121,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>267</length>
+        <length>265</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1014,7 +1148,7 @@
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>;</separator>
-    <enclosure/>
+    <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
     <schemaDefinition/>
@@ -1086,7 +1220,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>455</length>
+        <length>1295</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1108,7 +1242,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>887</length>
+        <length>1694</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1119,7 +1253,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>735</length>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1130,7 +1264,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>348</length>
+        <length>28</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1141,7 +1275,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>1694</length>
+        <length>11</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1152,7 +1286,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>582</length>
+        <length>16</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1163,7 +1297,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>150</length>
+        <length>16</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1174,19 +1308,19 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>223</length>
+        <length>73</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>CÓDIGO DO INDICADOR</name>
-        <type>String</type>
-        <format/>
+        <type>Integer</type>
+        <format>#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>894</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -1207,7 +1341,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>283</length>
+        <length>339</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1218,7 +1352,7 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>185</length>
+        <length>52</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -1235,13 +1369,13 @@
       </field>
       <field>
         <name>VALOR DE REFERÊNCIA</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>180</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -1251,52 +1385,52 @@
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>130</length>
+        <length>16</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>ÍNDICE ESPERADO ANO 1</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>42</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>ÍNDICE ESPERADO ANO 2</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>80</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>ÍNDICE ESPERADO ANO 3</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>108</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>ÍNDICE ESPERADO ANO 4</name>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#.#</format>
         <currency>$</currency>
         <decimal>,</decimal>
         <group>.</group>
-        <length>16</length>
-        <precision>-1</precision>
+        <length>15</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -1315,6 +1449,35 @@
     <GUI>
       <xloc>224</xloc>
       <yloc>352</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Remover duplicatas</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>exercicio</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>codigo_programa</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>240</yloc>
     </GUI>
   </transform>
   <transform>
@@ -2115,6 +2278,142 @@
     <GUI>
       <xloc>368</xloc>
       <yloc>352</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compress>N</compress>
+    <directory>${java.io.tmpdir}</directory>
+    <fields>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>exercicio</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>codigo_area_resultado</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>nome_area_resultado</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>codigo_programa</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>nome_programa</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>objetivo</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>publico_alvo</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>justificativa</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>natureza</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>tipologia</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>classificacao_de_governo</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>data_inicio</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>data_fim</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>unidade_gestora</name>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <sort_prefix>out</sort_prefix>
+    <sort_size>1000000</sort_size>
+    <unique_rows>N</unique_rows>
+    <attributes/>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>240</yloc>
     </GUI>
   </transform>
   <transform_error_handling>
