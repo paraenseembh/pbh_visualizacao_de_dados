@@ -83,8 +83,8 @@ CREATE TABLE IF NOT EXISTS `DW`.`D_PROGRAMA` (
   `natureza` VARCHAR(20) NOT NULL,
   `tipologia` VARCHAR(50) NOT NULL,
   `classificacao_de_governo` VARCHAR(20) NOT NULL,
-  `data_inicio` DATE NOT NULL,
-  `data_fim` DATE NOT NULL,
+  `data_inicio` DATETIME NOT NULL,
+  `data_fim` DATETIME NOT NULL,
   `unidade_gestora` VARCHAR(120) NOT NULL,
   PRIMARY KEY (`sk_programa`))
 ENGINE = InnoDB;

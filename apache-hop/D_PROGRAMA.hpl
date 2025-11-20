@@ -41,6 +41,16 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Sort rows</from>
+      <to>Remover duplicatas</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Remover duplicatas</from>
+      <to>Insert / update</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Select values 2022</from>
       <to>Sort rows</to>
       <enabled>Y</enabled>
@@ -58,16 +68,6 @@
     <hop>
       <from>Select values 2025</from>
       <to>Sort rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort rows</from>
-      <to>Remover duplicatas</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Remover duplicatas</from>
-      <to>Insert / update</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -155,7 +155,7 @@
       <value>
         <name>data_inicio</name>
         <rename>data_inicio</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>data_fim</name>
@@ -171,7 +171,7 @@
     <update_bypassed>N</update_bypassed>
     <attributes/>
     <GUI>
-      <xloc>784</xloc>
+      <xloc>832</xloc>
       <yloc>240</yloc>
     </GUI>
   </transform>
@@ -199,7 +199,7 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding/>
+    <encoding>ISO-8859-1</encoding>
     <fields>
       <field>
         <name>EXERC�CIO</name>
@@ -518,7 +518,7 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding/>
+    <encoding>ISO-8859-1</encoding>
     <fields>
       <field>
         <name>EXERC�CIO</name>
@@ -837,7 +837,7 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding/>
+    <encoding>ISO-8859-1</encoding>
     <fields>
       <field>
         <name>EXERC�CIO</name>
@@ -1156,7 +1156,7 @@
     <add_filename_result>N</add_filename_result>
     <parallel>N</parallel>
     <newline_possible>N</newline_possible>
-    <encoding/>
+    <encoding>UTF-8</encoding>
     <fields>
       <field>
         <name>﻿EXERCÍCIO</name>
@@ -1476,7 +1476,7 @@
     <reject_duplicate_row>N</reject_duplicate_row>
     <attributes/>
     <GUI>
-      <xloc>640</xloc>
+      <xloc>688</xloc>
       <yloc>240</yloc>
     </GUI>
   </transform>
@@ -1636,6 +1636,30 @@
         <name>OBSERVA��O</name>
         <precision>-2</precision>
       </field>
+      <meta>
+        <conversion_mask>dd/MM/yyyy HH:mm</conversion_mask>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>data_inicio</name>
+        <precision>-2</precision>
+        <rename>data_inicio</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Date</type>
+      </meta>
+      <meta>
+        <conversion_mask>dd/MM/yyyy HH:mm</conversion_mask>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>data_fim</name>
+        <precision>-2</precision>
+        <rename>data_fim</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Date</type>
+      </meta>
       <remove>
         <name>C�DIGO DO INDICADOR</name>
       </remove>
@@ -1836,6 +1860,30 @@
         <name>OBSERVA��O</name>
         <precision>-2</precision>
       </field>
+      <meta>
+        <conversion_mask>dd/MM/yyyy HH:mm</conversion_mask>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>data_inicio</name>
+        <precision>-2</precision>
+        <rename>data_inicio</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Date</type>
+      </meta>
+      <meta>
+        <conversion_mask>dd/MM/yyyy HH:mm</conversion_mask>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>data_fim</name>
+        <precision>-2</precision>
+        <rename>data_fim</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Date</type>
+      </meta>
       <remove>
         <name>C�DIGO DO INDICADOR</name>
       </remove>
@@ -2036,6 +2084,30 @@
         <name>OBSERVA��O</name>
         <precision>-2</precision>
       </field>
+      <meta>
+        <conversion_mask>dd/MM/yyyy HH:mm</conversion_mask>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>data_inicio</name>
+        <precision>-2</precision>
+        <rename>data_inicio</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Date</type>
+      </meta>
+      <meta>
+        <conversion_mask>dd/MM/yyyy HH:mm</conversion_mask>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>data_fim</name>
+        <precision>-2</precision>
+        <rename>data_fim</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Date</type>
+      </meta>
       <remove>
         <name>C�DIGO DO INDICADOR</name>
       </remove>
@@ -2236,6 +2308,30 @@
         <name>OBSERVAÇÃO</name>
         <precision>-2</precision>
       </field>
+      <meta>
+        <conversion_mask>dd/MM/yyyy HH:mm</conversion_mask>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>data_inicio</name>
+        <precision>-2</precision>
+        <rename>data_inicio</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Date</type>
+      </meta>
+      <meta>
+        <conversion_mask>dd/MM/yyyy HH:mm</conversion_mask>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>data_fim</name>
+        <precision>-2</precision>
+        <rename>data_fim</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Date</type>
+      </meta>
       <remove>
         <name>CÓDIGO DO INDICADOR</name>
       </remove>
@@ -2412,7 +2508,7 @@
     <unique_rows>N</unique_rows>
     <attributes/>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>560</xloc>
       <yloc>240</yloc>
     </GUI>
   </transform>
