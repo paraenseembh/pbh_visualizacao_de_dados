@@ -21,9 +21,9 @@ USE `DW` ;
 CREATE TABLE IF NOT EXISTS `DW`.`D_FUNCAO` (
   `sk_funcao` INT NOT NULL AUTO_INCREMENT,
   `codigo_funcao` INT NULL,
-  `nome_funcao` INT NULL,
+  `nome_funcao` VARCHAR(45) NULL,
   `codigo_subfuncao` INT NULL,
-  `nome_subfuncao` INT NULL,
+  `nome_subfuncao` VARCHAR(45) NULL,
   PRIMARY KEY (`sk_funcao`))
 ENGINE = InnoDB;
 
@@ -47,8 +47,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `DW`.`D_ACAO` (
   `sk_acao` INT NOT NULL AUTO_INCREMENT,
   `codigo_acao` INT NOT NULL,
-  `nome_acao` INT NOT NULL,
-  `nome_subacao` INT NOT NULL,
+  `nome_acao` VARCHAR(120) NOT NULL,
+  `nome_subacao` VARCHAR(120) NOT NULL,
   `codigo_subacao` INT NOT NULL,
   PRIMARY KEY (`sk_acao`))
 ENGINE = InnoDB;
