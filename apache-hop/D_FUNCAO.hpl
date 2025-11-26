@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pipeline>
   <info>
-    <name>filename</name>
+    <name>D_FUNCAO</name>
     <name_sync_with_filename>Y</name_sync_with_filename>
     <description/>
     <extended_description/>
@@ -21,44 +21,69 @@
   </notepads>
   <order>
     <hop>
-      <from>OCA</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values</from>
-      <to>Unique rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Unique rows</from>
       <to>Insert / update 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>PCD</from>
+      <from>funcao_2023_xlsx</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator</from>
+      <to>Replace in string</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>funcao_2024_1Q_xlsx</from>
+      <to>Calculator</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace in string</from>
       <to>Select values 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>IDOSOS</from>
+      <from>funcao_2025_xlsx</from>
       <to>Select values 3</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Select values</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Select values 2</from>
-      <to>Unique rows</to>
+      <to>Sort rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Select values 3</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
       <to>Unique rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>funcao_2024_2Q_3Q_xlsx 2</from>
+      <to>Select values 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 4</from>
+      <to>Sort rows</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <transform>
-    <name>IDOSOS</name>
-    <type>ExcelInput</type>
+    <name>Calculator</name>
+    <type>Calculator</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -67,202 +92,47 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <accept_filenames>N</accept_filenames>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_ignored>N</error_ignored>
-    <error_line_files_extension>error</error_line_files_extension>
-    <error_line_skipped>N</error_line_skipped>
-    <fields>
-      <field>
-        <length>-1</length>
-        <name>Sigla Eixo</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Eixo</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Sigla Sub-eixo</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Sub-eixo</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Exclusividade</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Função</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>Number</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Nome_função</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Subfunção</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>Number</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Nome_subfunção</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Programa</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>Number</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Nome_programa</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Projativ</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>Number</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Nome_projativ</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Subitem_projativ</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>Number</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Nome_subitem_projativ</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Índice_proporcionalidade</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>Number</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Orçado</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>Number</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Empenhado</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>Number</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Liquidado</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>Number</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Pago</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>Number</type>
-      </field>
-    </fields>
-    <file>
-      <name>C:\Users\isaqu\OneDrive\Desktop\pbh_visualizacao_de_dados-1\dados\orcamentos_tematicos\idosos\2023\ot-pessoa-idosa-ate-3-quad-2023-v1.xls.xlsx</name>
-    </file>
-    <file>
-      <name>C:\Users\isaqu\OneDrive\Desktop\pbh_visualizacao_de_dados-1\dados\orcamentos_tematicos\idosos\2024\ot-pessoa-idosa-3-quad-2024-v1-versao-1.xlsx</name>
-    </file>
-    <file>
-      <name>C:\Users\isaqu\OneDrive\Desktop\pbh_visualizacao_de_dados-1\dados\orcamentos_tematicos\idosos\2025\2025-orcamento-tematico-idoso-2-quad-2025.xlsx</name>
-    </file>
-    <header>Y</header>
-    <ignore_fields>N</ignore_fields>
-    <limit>0</limit>
-    <line_number_files_extension>line</line_number_files_extension>
-    <noempty>N</noempty>
-    <sheets>
-      <sheet>
-        <name>Planilha1</name>
-        <startcol>0</startcol>
-        <startrow>1</startrow>
-      </sheet>
-    </sheets>
-    <spreadsheet_type>SAX_POI</spreadsheet_type>
-    <stoponempty>N</stoponempty>
-    <strict_types>N</strict_types>
+    <calculation>
+      <calc_type>GET_ONLY_DIGITS</calc_type>
+      <field_a>FUNÇÃO</field_a>
+      <field_name>codigo_funcao</field_name>
+      <remove>N</remove>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <value_type>Integer</value_type>
+    </calculation>
+    <calculation>
+      <calc_type>GET_ONLY_DIGITS</calc_type>
+      <field_a>SUB FUNÇÃO</field_a>
+      <field_name>codigo_sub_funcao</field_name>
+      <remove>N</remove>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <value_type>Integer</value_type>
+    </calculation>
+    <calculation>
+      <calc_type>REMOVE_DIGITS</calc_type>
+      <field_a>FUNÇÃO</field_a>
+      <field_name>nome_funcao_com_traco</field_name>
+      <remove>N</remove>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <value_type>String</value_type>
+    </calculation>
+    <calculation>
+      <calc_type>REMOVE_DIGITS</calc_type>
+      <field_a>SUB FUNÇÃO</field_a>
+      <field_name>nome_sub_funcao_com_traco</field_name>
+      <remove>N</remove>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <value_type>String</value_type>
+    </calculation>
+    <failIfNoFile>Y</failIfNoFile>
     <attributes/>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>384</yloc>
+      <xloc>624</xloc>
+      <yloc>320</yloc>
     </GUI>
   </transform>
   <transform>
@@ -277,19 +147,1536 @@
       <schema_name/>
     </partitioning>
     <commit>100</commit>
+    <connection>DESTINO</connection>
     <lookup>
-      <schema/>
-      <table>lookup table</table>
+      <key>
+        <condition>=</condition>
+        <field>codigo_funcao</field>
+        <name>Função</name>
+      </key>
+      <key>
+        <condition>=</condition>
+        <field>nome_funcao</field>
+        <name>Nome_função</name>
+      </key>
+      <key>
+        <condition>=</condition>
+        <field>codigo_subfuncao</field>
+        <name>Subfunção</name>
+      </key>
+      <key>
+        <condition>=</condition>
+        <field>nome_subfuncao</field>
+        <name>Nome_subfunção</name>
+      </key>
+      <schema>DW</schema>
+      <table>D_FUNCAO</table>
+      <value>
+        <name>codigo_funcao</name>
+        <rename>Função</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nome_funcao</name>
+        <rename>Nome_função</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>codigo_subfuncao</name>
+        <rename>Subfunção</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nome_subfuncao</name>
+        <rename>Nome_subfunção</rename>
+        <update>Y</update>
+      </value>
     </lookup>
     <update_bypassed>N</update_bypassed>
     <attributes/>
     <GUI>
-      <xloc>1024</xloc>
+      <xloc>1312</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>nome_funcao_com_traco</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <out_stream_name>nome_funcao</out_stream_name>
+        <replace_string>-</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>nome_sub_funcao_com_traco</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <out_stream_name>nome_sub_funcao</out_stream_name>
+        <replace_string>-</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>752</xloc>
       <yloc>320</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>OCA</name>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <length>-2</length>
+        <name>Sigla Eixo</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Eixo</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Sigla Sub-eixo</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Sub-eixo</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Exclusividade</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Função</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_função</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Subfunção</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_subfunção</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Programa</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_programa</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Projativ</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_projativ</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Subitem_projativ</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_subitem_projativ</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Índice_proporcionalidade</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Orçado</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Empenhado</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Liquidado</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Pago</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Sigla Eixo_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Eixo_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Sigla Sub-eixo_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Sub-eixo_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Exclusividade_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Função_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_função_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Subfunção_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_subfunção_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Programa_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_programa_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Projativ_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_projativ_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Subitem_projativ_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_subitem_projativ_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Índice_proporcionalidade_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Orçado_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Empenhado_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Liquidado_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Pago_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Sigla Eixo_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Eixo_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Sigla Sub-eixo_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Sub-eixo_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Exclusividade_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Função_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_função_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Subfunção_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_subfunção_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Programa_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_programa_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Projativ_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_projativ_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Subitem_projativ_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Nome_subitem_projativ_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Índice_proporcionalidade_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Orçado_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Empenhado_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Liquidado_2</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>Pago_2</name>
+        <precision>-2</precision>
+      </field>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>Função</name>
+        <precision>-2</precision>
+        <rename>codigo_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Integer</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>Nome_função</name>
+        <precision>-2</precision>
+        <rename>nome_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>Nome_subfunção</name>
+        <precision>-2</precision>
+        <rename>nome_sub_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>Subfunção</name>
+        <precision>-2</precision>
+        <rename>codigo_sub_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Integer</type>
+      </meta>
+      <remove>
+        <name>Sigla Eixo</name>
+      </remove>
+      <remove>
+        <name>Eixo</name>
+      </remove>
+      <remove>
+        <name>Sigla Sub-eixo</name>
+      </remove>
+      <remove>
+        <name>Sub-eixo</name>
+      </remove>
+      <remove>
+        <name>Exclusividade</name>
+      </remove>
+      <remove>
+        <name>Programa</name>
+      </remove>
+      <remove>
+        <name>Nome_programa</name>
+      </remove>
+      <remove>
+        <name>Projativ</name>
+      </remove>
+      <remove>
+        <name>Nome_projativ</name>
+      </remove>
+      <remove>
+        <name>Subitem_projativ</name>
+      </remove>
+      <remove>
+        <name>Nome_subitem_projativ</name>
+      </remove>
+      <remove>
+        <name>Índice_proporcionalidade</name>
+      </remove>
+      <remove>
+        <name>Orçado</name>
+      </remove>
+      <remove>
+        <name>Empenhado</name>
+      </remove>
+      <remove>
+        <name>Liquidado</name>
+      </remove>
+      <remove>
+        <name>Pago</name>
+      </remove>
+      <remove>
+        <name>Sigla Eixo_1</name>
+      </remove>
+      <remove>
+        <name>Eixo_1</name>
+      </remove>
+      <remove>
+        <name>Sigla Sub-eixo_1</name>
+      </remove>
+      <remove>
+        <name>Sub-eixo_1</name>
+      </remove>
+      <remove>
+        <name>Exclusividade_1</name>
+      </remove>
+      <remove>
+        <name>Função_1</name>
+      </remove>
+      <remove>
+        <name>Nome_função_1</name>
+      </remove>
+      <remove>
+        <name>Subfunção_1</name>
+      </remove>
+      <remove>
+        <name>Nome_subfunção_1</name>
+      </remove>
+      <remove>
+        <name>Programa_1</name>
+      </remove>
+      <remove>
+        <name>Nome_programa_1</name>
+      </remove>
+      <remove>
+        <name>Projativ_1</name>
+      </remove>
+      <remove>
+        <name>Nome_projativ_1</name>
+      </remove>
+      <remove>
+        <name>Subitem_projativ_1</name>
+      </remove>
+      <remove>
+        <name>Nome_subitem_projativ_1</name>
+      </remove>
+      <remove>
+        <name>Índice_proporcionalidade_1</name>
+      </remove>
+      <remove>
+        <name>Orçado_1</name>
+      </remove>
+      <remove>
+        <name>Empenhado_1</name>
+      </remove>
+      <remove>
+        <name>Liquidado_1</name>
+      </remove>
+      <remove>
+        <name>Pago_1</name>
+      </remove>
+      <remove>
+        <name>Sigla Eixo_2</name>
+      </remove>
+      <remove>
+        <name>Eixo_2</name>
+      </remove>
+      <remove>
+        <name>Sigla Sub-eixo_2</name>
+      </remove>
+      <remove>
+        <name>Sub-eixo_2</name>
+      </remove>
+      <remove>
+        <name>Exclusividade_2</name>
+      </remove>
+      <remove>
+        <name>Função_2</name>
+      </remove>
+      <remove>
+        <name>Nome_função_2</name>
+      </remove>
+      <remove>
+        <name>Subfunção_2</name>
+      </remove>
+      <remove>
+        <name>Nome_subfunção_2</name>
+      </remove>
+      <remove>
+        <name>Programa_2</name>
+      </remove>
+      <remove>
+        <name>Nome_programa_2</name>
+      </remove>
+      <remove>
+        <name>Projativ_2</name>
+      </remove>
+      <remove>
+        <name>Nome_projativ_2</name>
+      </remove>
+      <remove>
+        <name>Subitem_projativ_2</name>
+      </remove>
+      <remove>
+        <name>Nome_subitem_projativ_2</name>
+      </remove>
+      <remove>
+        <name>Índice_proporcionalidade_2</name>
+      </remove>
+      <remove>
+        <name>Orçado_2</name>
+      </remove>
+      <remove>
+        <name>Empenhado_2</name>
+      </remove>
+      <remove>
+        <name>Liquidado_2</name>
+      </remove>
+      <remove>
+        <name>Pago_2</name>
+      </remove>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>880</xloc>
+      <yloc>224</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <length>-2</length>
+        <name>EIXO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUBEIXO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>UO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>FUNÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUB FUNÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>PROGRAMA</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>AÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUBAÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>TIPO CADASTRO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>ÍNDICE</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR ORÇADO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR EMPENHADO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR LIQUIDADO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR PAGO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>codigo_funcao</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>codigo_sub_funcao</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>nome_funcao_com_traco</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>nome_sub_funcao_com_traco</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>nome_funcao</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>nome_sub_funcao</name>
+        <precision>-2</precision>
+      </field>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>codigo_funcao</name>
+        <precision>-2</precision>
+        <rename>codigo_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Integer</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>nome_funcao</name>
+        <precision>-2</precision>
+        <rename>nome_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>nome_sub_funcao</name>
+        <precision>-2</precision>
+        <rename>nome_sub_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>codigo_sub_funcao</name>
+        <precision>-2</precision>
+        <rename>codigo_sub_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Integer</type>
+      </meta>
+      <remove>
+        <name>EIXO</name>
+      </remove>
+      <remove>
+        <name>SUBEIXO</name>
+      </remove>
+      <remove>
+        <name>UO</name>
+      </remove>
+      <remove>
+        <name>FUNÇÃO</name>
+      </remove>
+      <remove>
+        <name>SUB FUNÇÃO</name>
+      </remove>
+      <remove>
+        <name>PROGRAMA</name>
+      </remove>
+      <remove>
+        <name>AÇÃO</name>
+      </remove>
+      <remove>
+        <name>SUBAÇÃO</name>
+      </remove>
+      <remove>
+        <name>TIPO CADASTRO</name>
+      </remove>
+      <remove>
+        <name>ÍNDICE</name>
+      </remove>
+      <remove>
+        <name>VALOR ORÇADO</name>
+      </remove>
+      <remove>
+        <name>VALOR EMPENHADO</name>
+      </remove>
+      <remove>
+        <name>VALOR LIQUIDADO</name>
+      </remove>
+      <remove>
+        <name>VALOR PAGO</name>
+      </remove>
+      <remove>
+        <name>nome_funcao_com_traco</name>
+      </remove>
+      <remove>
+        <name>nome_sub_funcao_com_traco</name>
+      </remove>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>880</xloc>
+      <yloc>320</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 3</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <length>-2</length>
+        <name>CÓDIGO OT</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>ORÇAMENTO TEMÁTICO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>EIXO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUBEIXO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>UO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME UO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>FUNÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME FUNCÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUBFUNÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME SUBFUNCÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>PROGRAMA</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME PROGRAMA</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>AÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME ACÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUBAÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME SUBAÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>TIPO CADASTRO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>ÍNDICE</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR ORÇADO (R$)</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR EMPENHADO (R$)</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR LIQUIDADO (R$)</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR PAGO (R$)</name>
+        <precision>-2</precision>
+      </field>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>FUNÇÃO</name>
+        <precision>-2</precision>
+        <rename>codigo_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Integer</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>NOME FUNCÃO</name>
+        <precision>-2</precision>
+        <rename>nome_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>NOME SUBFUNCÃO</name>
+        <precision>-2</precision>
+        <rename>nome_sub_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>SUBFUNÇÃO</name>
+        <precision>-2</precision>
+        <rename>codigo_sub_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Integer</type>
+      </meta>
+      <remove>
+        <name>CÓDIGO OT</name>
+      </remove>
+      <remove>
+        <name>ORÇAMENTO TEMÁTICO</name>
+      </remove>
+      <remove>
+        <name>EIXO</name>
+      </remove>
+      <remove>
+        <name>SUBEIXO</name>
+      </remove>
+      <remove>
+        <name>UO</name>
+      </remove>
+      <remove>
+        <name>NOME UO</name>
+      </remove>
+      <remove>
+        <name>PROGRAMA</name>
+      </remove>
+      <remove>
+        <name>NOME PROGRAMA</name>
+      </remove>
+      <remove>
+        <name>AÇÃO</name>
+      </remove>
+      <remove>
+        <name>NOME ACÃO</name>
+      </remove>
+      <remove>
+        <name>SUBAÇÃO</name>
+      </remove>
+      <remove>
+        <name>NOME SUBAÇÃO</name>
+      </remove>
+      <remove>
+        <name>TIPO CADASTRO</name>
+      </remove>
+      <remove>
+        <name>ÍNDICE</name>
+      </remove>
+      <remove>
+        <name>VALOR ORÇADO (R$)</name>
+      </remove>
+      <remove>
+        <name>VALOR EMPENHADO (R$)</name>
+      </remove>
+      <remove>
+        <name>VALOR LIQUIDADO (R$)</name>
+      </remove>
+      <remove>
+        <name>VALOR PAGO (R$)</name>
+      </remove>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>880</xloc>
+      <yloc>512</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Select values 4</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <length>-2</length>
+        <name>EIXO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUBEIXO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>UO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME UO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>PROGRAMA</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME PROGRAMA</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>AÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME AÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUBAÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME SUBAÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>FUNÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME FUNÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUB FUNÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME SUB FUNÇÃO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>TIPO CADASTRO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>ÍNDICE</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR ORÇADO (R$)</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR EMPENHADO (R$)</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR LIQUIDADO (R$)</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR PAGO (R$)</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>EIXO_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUBEIXO_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>UO_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME DA UO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>PROGRAMA_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME DO PROGRAMA</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>AÇÃO_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME DA ACAO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUBAÇÃO_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME DA SUBACAO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>FUNÇÃO_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME DA FUNCAO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>SUB FUNÇÃO_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>NOME DA SUBFUNCAO</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>TIPO CADASTRO_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>ÍNDICE_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR ORÇADO (R$)_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR EMPENHADO (R$)_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR LIQUIDADO (R$)_1</name>
+        <precision>-2</precision>
+      </field>
+      <field>
+        <length>-2</length>
+        <name>VALOR PAGO (R$)_1</name>
+        <precision>-2</precision>
+      </field>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>FUNÇÃO</name>
+        <precision>-2</precision>
+        <rename>codigo_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Integer</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>NOME FUNÇÃO</name>
+        <precision>-2</precision>
+        <rename>nome_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>NOME SUB FUNÇÃO</name>
+        <precision>-2</precision>
+        <rename>nome_sub_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>String</type>
+      </meta>
+      <meta>
+        <date_format_lenient>N</date_format_lenient>
+        <length>-2</length>
+        <lenient_string_to_number>N</lenient_string_to_number>
+        <name>SUB FUNÇÃO</name>
+        <precision>-2</precision>
+        <rename>codigo_sub_funcao</rename>
+        <roundingType>half_even</roundingType>
+        <storage_type/>
+        <type>Integer</type>
+      </meta>
+      <remove>
+        <name>EIXO</name>
+      </remove>
+      <remove>
+        <name>SUBEIXO</name>
+      </remove>
+      <remove>
+        <name>UO</name>
+      </remove>
+      <remove>
+        <name>NOME UO</name>
+      </remove>
+      <remove>
+        <name>PROGRAMA</name>
+      </remove>
+      <remove>
+        <name>NOME PROGRAMA</name>
+      </remove>
+      <remove>
+        <name>AÇÃO</name>
+      </remove>
+      <remove>
+        <name>NOME AÇÃO</name>
+      </remove>
+      <remove>
+        <name>SUBAÇÃO</name>
+      </remove>
+      <remove>
+        <name>NOME SUBAÇÃO</name>
+      </remove>
+      <remove>
+        <name>TIPO CADASTRO</name>
+      </remove>
+      <remove>
+        <name>ÍNDICE</name>
+      </remove>
+      <remove>
+        <name>VALOR ORÇADO (R$)</name>
+      </remove>
+      <remove>
+        <name>VALOR EMPENHADO (R$)</name>
+      </remove>
+      <remove>
+        <name>VALOR LIQUIDADO (R$)</name>
+      </remove>
+      <remove>
+        <name>VALOR PAGO (R$)</name>
+      </remove>
+      <remove>
+        <name>EIXO_1</name>
+      </remove>
+      <remove>
+        <name>SUBEIXO_1</name>
+      </remove>
+      <remove>
+        <name>UO_1</name>
+      </remove>
+      <remove>
+        <name>NOME DA UO</name>
+      </remove>
+      <remove>
+        <name>PROGRAMA_1</name>
+      </remove>
+      <remove>
+        <name>NOME DO PROGRAMA</name>
+      </remove>
+      <remove>
+        <name>AÇÃO_1</name>
+      </remove>
+      <remove>
+        <name>NOME DA ACAO</name>
+      </remove>
+      <remove>
+        <name>SUBAÇÃO_1</name>
+      </remove>
+      <remove>
+        <name>NOME DA SUBACAO</name>
+      </remove>
+      <remove>
+        <name>FUNÇÃO_1</name>
+      </remove>
+      <remove>
+        <name>NOME DA FUNCAO</name>
+      </remove>
+      <remove>
+        <name>SUB FUNÇÃO_1</name>
+      </remove>
+      <remove>
+        <name>NOME DA SUBFUNCAO</name>
+      </remove>
+      <remove>
+        <name>TIPO CADASTRO_1</name>
+      </remove>
+      <remove>
+        <name>ÍNDICE_1</name>
+      </remove>
+      <remove>
+        <name>VALOR ORÇADO (R$)_1</name>
+      </remove>
+      <remove>
+        <name>VALOR EMPENHADO (R$)_1</name>
+      </remove>
+      <remove>
+        <name>VALOR LIQUIDADO (R$)_1</name>
+      </remove>
+      <remove>
+        <name>VALOR PAGO (R$)_1</name>
+      </remove>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>880</xloc>
+      <yloc>416</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compress>N</compress>
+    <directory>${java.io.tmpdir}</directory>
+    <fields>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>codigo_funcao</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>nome_funcao</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>codigo_sub_funcao</name>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <name>nome_sub_funcao</name>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <sort_prefix>out</sort_prefix>
+    <sort_size>1000000</sort_size>
+    <unique_rows>N</unique_rows>
+    <attributes/>
+    <GUI>
+      <xloc>1024</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Unique rows</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>codigo_funcao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>nome_funcao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>codigo_sub_funcao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>nome_sub_funcao</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>1168</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>funcao_2023_xlsx</name>
     <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -466,6 +1853,380 @@
         <trim_type>none</trim_type>
         <type>Number</type>
       </field>
+      <field>
+        <length>-1</length>
+        <name>Sigla Eixo_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Eixo_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Sigla Sub-eixo_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Sub-eixo_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Exclusividade_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Função_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Nome_função_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Subfunção_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Nome_subfunção_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Programa_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Nome_programa_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Projativ_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Nome_projativ_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Subitem_projativ_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Nome_subitem_projativ_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Índice_proporcionalidade_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Orçado_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Empenhado_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Liquidado_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Pago_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Sigla Eixo_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Eixo_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Sigla Sub-eixo_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Sub-eixo_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Exclusividade_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Função_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Nome_função_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Subfunção_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Nome_subfunção_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Programa_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Nome_programa_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Projativ_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Nome_projativ_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Subitem_projativ_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Nome_subitem_projativ_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Índice_proporcionalidade_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Orçado_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Empenhado_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Liquidado_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>Pago_2</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+    </fields>
+    <file>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>/home/qmd/Documentos/PUC/pbh_visualizacao_de_dados/dados/orcamentos_tematicos/crianca_adolescente/OCA_QUADRIMESTRE/2023</name>
+    </file>
+    <header>Y</header>
+    <limit>0</limit>
+    <line_number_files_extension>line</line_number_files_extension>
+    <noempty>Y</noempty>
+    <sheets>
+      <sheet>
+        <name>2023 oca 1 q</name>
+        <startcol>0</startcol>
+        <startrow>1</startrow>
+      </sheet>
+      <sheet>
+        <name>oca 2 2023</name>
+        <startcol>0</startcol>
+        <startrow>1</startrow>
+      </sheet>
+      <sheet>
+        <name>Planilha1</name>
+        <startcol>0</startcol>
+        <startrow>1</startrow>
+      </sheet>
+    </sheets>
+    <spreadsheet_type>POI</spreadsheet_type>
+    <stoponempty>N</stoponempty>
+    <strict_types>N</strict_types>
+    <attributes/>
+    <GUI>
+      <xloc>480</xloc>
+      <yloc>224</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>funcao_2024_1Q_xlsx</name>
+    <type>ExcelInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <accept_filenames>N</accept_filenames>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_ignored>N</error_ignored>
+    <error_line_files_extension>error</error_line_files_extension>
+    <error_line_skipped>N</error_line_skipped>
+    <fields>
       <field>
         <length>-1</length>
         <name>EIXO</name>
@@ -490,39 +2251,122 @@
         <trim_type>none</trim_type>
         <type>String</type>
       </field>
+      <field>
+        <length>-1</length>
+        <name>FUNÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>SUB FUNÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>PROGRAMA</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>AÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>SUBAÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>TIPO CADASTRO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>ÍNDICE</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR ORÇADO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR EMPENHADO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR LIQUIDADO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR PAGO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
     </fields>
     <file>
-      <name>C:\Users\isaqu\OneDrive\Desktop\pbh_visualizacao_de_dados-1\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023\ot-oca-3-quad-2023-versao-1.xlsx</name>
-    </file>
-    <file>
-      <name>C:\Users\isaqu\OneDrive\Desktop\pbh_visualizacao_de_dados-1\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-3-quad-2024-versao-1.xlsx</name>
-    </file>
-    <file>
-      <name>C:\Users\isaqu\OneDrive\Desktop\pbh_visualizacao_de_dados-1\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2025\ot-oca-2-quad-2025-versao-1.xlsx</name>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>/home/qmd/Documentos/PUC/pbh_visualizacao_de_dados/dados/orcamentos_tematicos/crianca_adolescente/OCA_QUADRIMESTRE/2024/ot-oca-1-quad-2024-versao-1-1.xlsx</name>
     </file>
     <header>Y</header>
-    <ignore_fields>N</ignore_fields>
     <limit>0</limit>
     <line_number_files_extension>line</line_number_files_extension>
-    <noempty>N</noempty>
+    <noempty>Y</noempty>
     <sheets>
       <sheet>
-        <name>Planilha1</name>
+        <name>2024 oca 1 q</name>
         <startcol>0</startcol>
         <startrow>1</startrow>
       </sheet>
     </sheets>
-    <spreadsheet_type>SAX_POI</spreadsheet_type>
+    <spreadsheet_type>POI</spreadsheet_type>
     <stoponempty>N</stoponempty>
     <strict_types>N</strict_types>
     <attributes/>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>224</yloc>
+      <xloc>480</xloc>
+      <yloc>320</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>PCD</name>
+    <name>funcao_2024_2Q_3Q_xlsx 2</name>
     <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -541,6 +2385,412 @@
     <fields>
       <field>
         <length>-1</length>
+        <name>EIXO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>SUBEIXO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>UO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME UO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>PROGRAMA</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME PROGRAMA</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>AÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME AÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>SUBAÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME SUBAÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>FUNÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME FUNÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>SUB FUNÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME SUB FUNÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>TIPO CADASTRO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>ÍNDICE</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR ORÇADO (R$)</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR EMPENHADO (R$)</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR LIQUIDADO (R$)</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR PAGO (R$)</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>EIXO_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>SUBEIXO_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>UO_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME DA UO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>PROGRAMA_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME DO PROGRAMA</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>AÇÃO_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME DA ACAO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>SUBAÇÃO_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME DA SUBACAO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>FUNÇÃO_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME DA FUNCAO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>SUB FUNÇÃO_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>NOME DA SUBFUNCAO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>TIPO CADASTRO_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>ÍNDICE_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR ORÇADO (R$)_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR EMPENHADO (R$)_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR LIQUIDADO (R$)_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR PAGO (R$)_1</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+    </fields>
+    <file>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>/home/qmd/Documentos/PUC/pbh_visualizacao_de_dados/dados/orcamentos_tematicos/crianca_adolescente/OCA_QUADRIMESTRE/2024/ot-oca-2-quad-2024-versao-1.xlsx</name>
+    </file>
+    <file>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>/home/qmd/Documentos/PUC/pbh_visualizacao_de_dados/dados/orcamentos_tematicos/crianca_adolescente/OCA_QUADRIMESTRE/2024/ot-oca-3-quad-2024-versao-1.xlsx</name>
+    </file>
+    <header>Y</header>
+    <limit>0</limit>
+    <line_number_files_extension>line</line_number_files_extension>
+    <noempty>Y</noempty>
+    <sheets>
+      <sheet>
+        <name>Sheet</name>
+        <startcol>0</startcol>
+        <startrow>1</startrow>
+      </sheet>
+      <sheet>
+        <name>Planilha1</name>
+        <startcol>0</startcol>
+        <startrow>1</startrow>
+      </sheet>
+    </sheets>
+    <spreadsheet_type>POI</spreadsheet_type>
+    <stoponempty>N</stoponempty>
+    <strict_types>N</strict_types>
+    <attributes/>
+    <GUI>
+      <xloc>480</xloc>
+      <yloc>416</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>funcao_2025_xlsx</name>
+    <type>ExcelInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <accept_filenames>N</accept_filenames>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_ignored>N</error_ignored>
+    <error_line_files_extension>error</error_line_files_extension>
+    <error_line_skipped>N</error_line_skipped>
+    <fields>
+      <field>
+        <length>-1</length>
+        <name>CÓDIGO OT</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>ORÇAMENTO TEMÁTICO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>EIXO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>SUBEIXO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
         <name>UO</name>
         <precision>-1</precision>
         <repeat>N</repeat>
@@ -549,7 +2799,7 @@
       </field>
       <field>
         <length>-1</length>
-        <name>Nome_uo</name>
+        <name>NOME UO</name>
         <precision>-1</precision>
         <repeat>N</repeat>
         <trim_type>none</trim_type>
@@ -557,39 +2807,7 @@
       </field>
       <field>
         <length>-1</length>
-        <name>Sigla Eixo</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Eixo</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Sigla Sub-eixo</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Sub-eixo</name>
-        <precision>-1</precision>
-        <repeat>N</repeat>
-        <trim_type>none</trim_type>
-        <type>String</type>
-      </field>
-      <field>
-        <length>-1</length>
-        <name>Programa</name>
+        <name>FUNÇÃO</name>
         <precision>-1</precision>
         <repeat>N</repeat>
         <trim_type>none</trim_type>
@@ -597,7 +2815,7 @@
       </field>
       <field>
         <length>-1</length>
-        <name>Nome_programa</name>
+        <name>NOME FUNCÃO</name>
         <precision>-1</precision>
         <repeat>N</repeat>
         <trim_type>none</trim_type>
@@ -605,7 +2823,7 @@
       </field>
       <field>
         <length>-1</length>
-        <name>Ação</name>
+        <name>SUBFUNÇÃO</name>
         <precision>-1</precision>
         <repeat>N</repeat>
         <trim_type>none</trim_type>
@@ -613,7 +2831,7 @@
       </field>
       <field>
         <length>-1</length>
-        <name>Nome_ação</name>
+        <name>NOME SUBFUNCÃO</name>
         <precision>-1</precision>
         <repeat>N</repeat>
         <trim_type>none</trim_type>
@@ -621,7 +2839,7 @@
       </field>
       <field>
         <length>-1</length>
-        <name>Subação</name>
+        <name>PROGRAMA</name>
         <precision>-1</precision>
         <repeat>N</repeat>
         <trim_type>none</trim_type>
@@ -629,7 +2847,7 @@
       </field>
       <field>
         <length>-1</length>
-        <name>Nome_subação</name>
+        <name>NOME PROGRAMA</name>
         <precision>-1</precision>
         <repeat>N</repeat>
         <trim_type>none</trim_type>
@@ -637,7 +2855,7 @@
       </field>
       <field>
         <length>-1</length>
-        <name>Índice_proporcionalidade</name>
+        <name>AÇÃO</name>
         <precision>-1</precision>
         <repeat>N</repeat>
         <trim_type>none</trim_type>
@@ -645,7 +2863,15 @@
       </field>
       <field>
         <length>-1</length>
-        <name>Valor orçado</name>
+        <name>NOME ACÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>SUBAÇÃO</name>
         <precision>-1</precision>
         <repeat>N</repeat>
         <trim_type>none</trim_type>
@@ -653,7 +2879,23 @@
       </field>
       <field>
         <length>-1</length>
-        <name>Valor_empenhado</name>
+        <name>NOME SUBAÇÃO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>TIPO CADASTRO</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>ÍNDICE</name>
         <precision>-1</precision>
         <repeat>N</repeat>
         <trim_type>none</trim_type>
@@ -661,7 +2903,31 @@
       </field>
       <field>
         <length>-1</length>
-        <name>Valor_pago</name>
+        <name>VALOR ORÇADO (R$)</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR EMPENHADO (R$)</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR LIQUIDADO (R$)</name>
+        <precision>-1</precision>
+        <repeat>N</repeat>
+        <trim_type>none</trim_type>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>VALOR PAGO (R$)</name>
         <precision>-1</precision>
         <repeat>N</repeat>
         <trim_type>none</trim_type>
@@ -669,171 +2935,28 @@
       </field>
     </fields>
     <file>
-      <name>C:\Users\isaqu\OneDrive\Desktop\pbh_visualizacao_de_dados-1\dados\orcamentos_tematicos\deficiencia\2023\ot-pessoa-com-deficiencia-3-quad-2023-v1.xls.xlsx</name>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>/home/qmd/Documentos/PUC/pbh_visualizacao_de_dados/dados/orcamentos_tematicos/crianca_adolescente/OCA_QUADRIMESTRE/2025/ot-oca-1-quad-2025-versao-1.xlsx</name>
     </file>
     <header>Y</header>
-    <ignore_fields>N</ignore_fields>
     <limit>0</limit>
     <line_number_files_extension>line</line_number_files_extension>
-    <noempty>N</noempty>
+    <noempty>Y</noempty>
     <sheets>
       <sheet>
         <name>Planilha1</name>
         <startcol>0</startcol>
-        <startrow>2</startrow>
+        <startrow>1</startrow>
       </sheet>
     </sheets>
-    <spreadsheet_type>SAX_POI</spreadsheet_type>
+    <spreadsheet_type>POI</spreadsheet_type>
     <stoponempty>N</stoponempty>
     <strict_types>N</strict_types>
     <attributes/>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>304</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <length>-2</length>
-        <name>Função</name>
-        <precision>-2</precision>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>Nome_função</name>
-        <precision>-2</precision>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>Subfunção</name>
-        <precision>-2</precision>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>Nome_subfunção</name>
-        <precision>-2</precision>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>224</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Select values 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <length>-2</length>
-        <name>Função</name>
-        <precision>-2</precision>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>Nome_função</name>
-        <precision>-2</precision>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>Subfunção</name>
-        <precision>-2</precision>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>Nome_subfunção</name>
-        <precision>-2</precision>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>304</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Select values 3</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <length>-2</length>
-        <name>Função</name>
-        <precision>-2</precision>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>Nome_função</name>
-        <precision>-2</precision>
-      </field>
-      <field>
-        <length>-2</length>
-        <name>Subfunção</name>
-        <precision>-2</precision>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>384</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Unique rows</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <count_rows>N</count_rows>
-    <fields>
-      <field>
-        <case_insensitive>N</case_insensitive>
-        <name>Função</name>
-      </field>
-      <field>
-        <case_insensitive>N</case_insensitive>
-        <name>Subfunção</name>
-      </field>
-    </fields>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <attributes/>
-    <GUI>
-      <xloc>864</xloc>
-      <yloc>320</yloc>
+      <xloc>480</xloc>
+      <yloc>512</yloc>
     </GUI>
   </transform>
   <transform_error_handling>
