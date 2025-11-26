@@ -30,7 +30,7 @@ Os orçamentos temáticos de BH são ferramentas estratégicas que focam na aloc
 
 - [Plano de Trabalho](https://app.clickup.com/90132289001/v/l/6-901318770481-1)
 - [Portal da Transparência PBH](https://prefeitura.pbh.gov.br/transparencia)
-- [Apresentação](https://www.figma.com/slides/xp2YmA8L30zoKcFNK09OPW/ProjetoIII_pbh?node-id=1-266&t=zjU17AKVKpO52G7q-0)
+- [Apresentação](https://www.canva.com/design/DAG0fzB0RqM/pHhparaS0ik_2SiL1IqJTQ/view?utm_content=DAG0fzB0RqM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he412962b69)
 
 ## Referências Principais
 
