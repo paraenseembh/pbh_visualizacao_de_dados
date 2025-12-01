@@ -186,7 +186,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/qmd/Documentos/PUC/pbh_visualizacao_de_dados/dados/ppag/programas_e_indicadores/2022-programas-e-indicadores-ppag-2022-2025b.csv</filename>
+    <filename>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\ppag\programas_e_indicadores\2022-programas-e-indicadores-ppag-2022-2025b.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -505,7 +505,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/qmd/Documentos/PUC/pbh_visualizacao_de_dados/dados/ppag/programas_e_indicadores/2023-programas-e-indicadores-ppag-2022-2025.csv</filename>
+    <filename>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\ppag\programas_e_indicadores\2023-programas-e-indicadores-ppag-2022-2025.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -824,7 +824,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/qmd/Documentos/PUC/pbh_visualizacao_de_dados/dados/ppag/programas_e_indicadores/2024-programas-e-indicadores-ppag-2022-2025.csv</filename>
+    <filename>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\ppag\programas_e_indicadores\2024-programas-e-indicadores-ppag-2022-2025.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1143,7 +1143,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/qmd/Documentos/PUC/pbh_visualizacao_de_dados/dados/ppag/programas_e_indicadores/2025-programas-e-indicadores-ppag-2022-2025.csv</filename>
+    <filename>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\ppag\programas_e_indicadores\2025-programas-e-indicadores-ppag-2022-2025.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>

@@ -210,17 +210,65 @@
     </partitioning>
     <doNotFailIfNoFile>N</doNotFailIfNoFile>
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
+    <exclude_wildcard_Field/>
     <file>
+      <exclude_filemask/>
       <file_required>N</file_required>
-      <filemask>.*\.xlsx</filemask>
-      <include_subfolders>Y</include_subfolders>
-      <name>/home/qmd/Documentos/PUC/pbh_visualizacao_de_dados/dados/orcamentos_tematicos/crianca_adolescente/OCA_QUADRIMESTRE</name>
+      <filemask/>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-1-quad-2024-versao-1-1.xlsx</name>
     </file>
     <file>
+      <exclude_filemask/>
       <file_required>N</file_required>
+      <filemask/>
       <include_subfolders>N</include_subfolders>
+      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-2-quad-2024-versao-1.xlsx</name>
+    </file>
+    <file>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <filemask/>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-3-quad-2024-versao-1.xlsx</name>
+    </file>
+    <file>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <filemask/>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023\ot-oca-1-quad-2023-versao-1.xlsx</name>
+    </file>
+    <file>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <filemask/>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023\ot-oca-2-quad-2023-versao-1.xlsx</name>
+    </file>
+    <file>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <filemask/>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023\ot-oca-3-quad-2023-versao-1.xlsx</name>
+    </file>
+    <file>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <filemask/>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2025\ot-oca-1-quad-2025-versao-1.xlsx</name>
+    </file>
+    <file>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <filemask/>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2025\ot-oca-2-quad-2025-versao-1.xlsx</name>
     </file>
     <filefield>N</filefield>
+    <filename_Field/>
     <filter>
       <filterfiletype>all_files</filterfiletype>
     </filter>
@@ -228,6 +276,8 @@
     <limit>0</limit>
     <raiseAnExceptionIfNoFile>N</raiseAnExceptionIfNoFile>
     <rownum>N</rownum>
+    <rownum_field/>
+    <wildcard_Field/>
     <attributes/>
     <GUI>
       <xloc>272</xloc>
