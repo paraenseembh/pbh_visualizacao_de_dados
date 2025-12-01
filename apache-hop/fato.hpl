@@ -31,11 +31,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values</from>
-      <to>Sort rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>OCA 2023/ultimo_quadrimestre(2023/3)</from>
       <to>Strings cut</to>
       <enabled>Y</enabled>
@@ -46,16 +41,169 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values 2</from>
+      <from>Upper case</from>
       <to>Sort rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Select values</from>
+      <to>ano_quad_2025</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Select values 3</from>
-      <to>Sort rows</to>
+      <to>ano_quad_2023</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2</from>
+      <to>ano_quad_2024</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ano_quad_2023</from>
+      <to>Upper case</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ano_quad_2024</from>
+      <to>Upper case</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ano_quad_2025</from>
+      <to>Upper case</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Remover duplicatas</from>
+      <to>SK d_tempo</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Remover duplicatas</from>
+      <to>SK d_acao</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Remover duplicatas</from>
+      <to>SK d_funcao</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Remover duplicatas</from>
+      <to>SK d_programa</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Remover duplicatas</from>
+      <to>SK d_eixo</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
+      <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>Remover duplicatas</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SK d_tempo</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SK d_acao</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SK d_funcao</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SK d_programa</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SK d_eixo</from>
+      <to>Merge join</to>
       <enabled>Y</enabled>
     </hop>
   </order>
+  <transform>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+          <condition>
+            <conditions>
+</conditions>
+            <function>IS NULL</function>
+            <leftvalue>codigo_acao</leftvalue>
+            <negated>N</negated>
+            <operator>-</operator>
+          </condition>
+          <condition>
+            <conditions>
+</conditions>
+            <function>IS NULL</function>
+            <leftvalue>codigo_funcao</leftvalue>
+            <negated>N</negated>
+            <operator>OR</operator>
+          </condition>
+          <condition>
+            <conditions>
+</conditions>
+            <function>IS NULL</function>
+            <leftvalue>codigo_programa</leftvalue>
+            <negated>N</negated>
+            <operator>AND</operator>
+          </condition>
+          <condition>
+            <conditions>
+</conditions>
+            <function>IS NULL</function>
+            <leftvalue>codigo_subacao</leftvalue>
+            <negated>N</negated>
+            <operator>AND</operator>
+          </condition>
+          <condition>
+            <conditions>
+</conditions>
+            <function>IS NULL</function>
+            <leftvalue>codigo_subfuncao</leftvalue>
+            <negated>N</negated>
+            <operator>AND</operator>
+          </condition>
+        </conditions>
+        <function>IS NULL</function>
+        <leftvalue>eixo_normalizado</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_false_to>Remover duplicatas</send_false_to>
+    <attributes/>
+    <GUI>
+      <xloc>1248</xloc>
+      <yloc>320</yloc>
+    </GUI>
+  </transform>
   <transform>
     <name>OCA 2023/ultimo_quadrimestre(2023/3)</name>
     <type>ExcelInput</type>
@@ -685,6 +833,289 @@
     </GUI>
   </transform>
   <transform>
+    <name>Remover duplicatas</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>codigo_acao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>codigo_funcao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>codigo_programa</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>codigo_subacao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>codigo_subfuncao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>indice</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>nome_eixo</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>nome_subeixo</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>tipo_cadastro</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>valor_empenhado</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>valor_liquidado</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>valor_orcado</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>valor_pago</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>1360</xloc>
+      <yloc>320</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>SK d_acao</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <connection>DESTINO</connection>
+    <lookup>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <fail_on_multiple>N</fail_on_multiple>
+      <key>
+        <condition>=</condition>
+        <field>codigo_acao</field>
+        <name>codigo_acao</name>
+      </key>
+      <key>
+        <condition>=</condition>
+        <field>codigo_subacao</field>
+        <name>codigo_subacao</name>
+      </key>
+      <schema>dw</schema>
+      <table>d_acao</table>
+      <value>
+        <name>sk_acao</name>
+        <rename>sk_acao</rename>
+        <trim_type>none</trim_type>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>1504</xloc>
+      <yloc>240</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>SK d_eixo</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <connection>DESTINO</connection>
+    <lookup>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <fail_on_multiple>N</fail_on_multiple>
+      <key>
+        <condition>=</condition>
+        <field>nome_eixo</field>
+        <name>nome_eixo</name>
+      </key>
+      <key>
+        <condition>=</condition>
+        <field>nome_subeixo</field>
+        <name>nome_subeixo</name>
+      </key>
+      <schema>dw</schema>
+      <table>d_eixo</table>
+      <value>
+        <name>sk_eixo</name>
+        <rename>sk_eixo</rename>
+        <trim_type>none</trim_type>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>1504</xloc>
+      <yloc>448</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>SK d_funcao</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <connection>DESTINO</connection>
+    <lookup>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <fail_on_multiple>N</fail_on_multiple>
+      <key>
+        <condition>=</condition>
+        <field>codigo_funcao</field>
+        <name>codigo_funcao</name>
+      </key>
+      <key>
+        <condition>=</condition>
+        <field>codigo_subfuncao</field>
+        <name>codigo_subfuncao</name>
+      </key>
+      <schema>dw</schema>
+      <table>d_funcao</table>
+      <value>
+        <name>sk_funcao</name>
+        <rename>sk_funcao</rename>
+        <trim_type>none</trim_type>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>1504</xloc>
+      <yloc>304</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>SK d_programa</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <connection>DESTINO</connection>
+    <lookup>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <fail_on_multiple>N</fail_on_multiple>
+      <key>
+        <condition>=</condition>
+        <field>exercicio</field>
+        <name>exercicio</name>
+      </key>
+      <key>
+        <condition>=</condition>
+        <field>codigo_programa</field>
+        <name>codigo_programa</name>
+      </key>
+      <schema>dw</schema>
+      <table>d_programa</table>
+      <value>
+        <name>sk_programa</name>
+        <rename>sk_programa</rename>
+        <trim_type>none</trim_type>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>1504</xloc>
+      <yloc>384</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>SK d_tempo</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cache>N</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <connection>DESTINO</connection>
+    <lookup>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <fail_on_multiple>N</fail_on_multiple>
+      <key>
+        <condition>=</condition>
+        <field>quadrimestre_ano</field>
+        <name>quad_ano</name>
+      </key>
+      <schema>dw</schema>
+      <table>d_tempo</table>
+      <value>
+        <name>sk_tempo</name>
+        <rename>sk_tempo</rename>
+        <trim_type>none</trim_type>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>1504</xloc>
+      <yloc>176</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>Select values</name>
     <type>SelectValues</type>
     <description/>
@@ -921,7 +1352,7 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>704</xloc>
+      <xloc>768</xloc>
       <yloc>240</yloc>
     </GUI>
   </transform>
@@ -1162,7 +1593,7 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>704</xloc>
+      <xloc>768</xloc>
       <yloc>320</yloc>
     </GUI>
   </transform>
@@ -1416,7 +1847,7 @@
     <unique_rows>N</unique_rows>
     <attributes/>
     <GUI>
-      <xloc>832</xloc>
+      <xloc>1136</xloc>
       <yloc>320</yloc>
     </GUI>
   </transform>
@@ -1449,6 +1880,212 @@
     <GUI>
       <xloc>656</xloc>
       <yloc>416</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Upper case</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>nome_eixo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>nome_subeixo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipo_cadastro</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>1024</xloc>
+      <yloc>320</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>ano_quad_2023</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>2023_3</field_a>
+      <field_name>quad_ano</field_name>
+      <remove>N</remove>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <value_type>String</value_type>
+    </calculation>
+    <calculation>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>2023</field_a>
+      <field_name>exercicio</field_name>
+      <remove>N</remove>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <value_type>Integer</value_type>
+    </calculation>
+    <failIfNoFile>Y</failIfNoFile>
+    <attributes/>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>416</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>ano_quad_2024</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>2024_3</field_a>
+      <field_name>quad_ano</field_name>
+      <remove>N</remove>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <value_type>String</value_type>
+    </calculation>
+    <calculation>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>2024</field_a>
+      <field_name>exercicio</field_name>
+      <remove>N</remove>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <value_type>Integer</value_type>
+    </calculation>
+    <failIfNoFile>Y</failIfNoFile>
+    <attributes/>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>320</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>ano_quad_2025</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>2025_2</field_a>
+      <field_name>quad_ano</field_name>
+      <remove>N</remove>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <value_type>String</value_type>
+    </calculation>
+    <calculation>
+      <calc_type>CONSTANT</calc_type>
+      <field_a>2025</field_a>
+      <field_name>exercicio</field_name>
+      <remove>N</remove>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <value_type>Integer</value_type>
+    </calculation>
+    <failIfNoFile>Y</failIfNoFile>
+    <attributes/>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>240</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Merge join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <keys_1>
+      <key>codigo_acao</key>
+      <key>codigo_funcao</key>
+      <key>codigo_programa</key>
+      <key>codigo_subacao</key>
+      <key>codigo_subfuncao</key>
+      <key>indice</key>
+      <key>nome_eixo</key>
+      <key>nome_subeixo</key>
+      <key>tipo_cadastro</key>
+      <key>valor_empenhado</key>
+      <key>valor_liquidado</key>
+      <key>valor_orcado</key>
+      <key>valor_pago</key>
+      <key>quad_ano</key>
+      <key>exercicio</key>
+      <key>sk_tempo</key>
+    </keys_1>
+    <keys_2>
+</keys_2>
+    <transform1>SK d_tempo</transform1>
+    <transform2>SK d_acao</transform2>
+    <attributes/>
+    <GUI>
+      <xloc>1632</xloc>
+      <yloc>320</yloc>
     </GUI>
   </transform>
   <transform_error_handling>
