@@ -195,62 +195,32 @@
         <field>sk_tempo</field>
         <name>sk_tempo</name>
       </key>
-      <key>
-        <condition>=</condition>
-        <field>tipo_cadastro</field>
-        <name>tipo_cadastro</name>
-      </key>
-      <key>
-        <condition>=</condition>
-        <field>indice</field>
-        <name>indice</name>
-      </key>
-      <key>
-        <condition>=</condition>
-        <field>valor_empenhado</field>
-        <name>valor_empenhado</name>
-      </key>
-      <key>
-        <condition>=</condition>
-        <field>valor_liquidado</field>
-        <name>valor_liquidado</name>
-      </key>
-      <key>
-        <condition>=</condition>
-        <field>valor_orcado</field>
-        <name>valor_orcado</name>
-      </key>
-      <key>
-        <condition>=</condition>
-        <field>valor_pago</field>
-        <name>valor_pago</name>
-      </key>
       <schema>dw</schema>
       <table>f_orçamento_tematico</table>
       <value>
         <name>sk_acao</name>
         <rename>sk_acao</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>sk_eixo</name>
         <rename>sk_eixo</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>sk_funcao</name>
         <rename>sk_funcao</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>sk_programa</name>
         <rename>sk_programa</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>sk_tempo</name>
         <rename>sk_tempo</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>tipo_cadastro</name>
@@ -2317,7 +2287,7 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>752</xloc>
+      <xloc>768</xloc>
       <yloc>720</yloc>
     </GUI>
   </transform>
@@ -2334,7 +2304,51 @@
     </partitioning>
     <count_rows>N</count_rows>
     <fields>
-</fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>sk_acao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>sk_eixo</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>sk_funcao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>sk_programa</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>sk_tempo</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>tipo_cadastro</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>indice</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>valor_empenhado</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>valor_liquidado</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>valor_orcado</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>valor_pago</name>
+      </field>
+    </fields>
     <reject_duplicate_row>N</reject_duplicate_row>
     <attributes/>
     <GUI>
