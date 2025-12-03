@@ -1334,14 +1334,24 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <accept_field/>
     <accept_filenames>N</accept_filenames>
+    <accept_transform_name/>
     <add_to_result_filenames>Y</add_to_result_filenames>
+    <bad_line_files_destination_directory/>
     <bad_line_files_extension>warning</bad_line_files_extension>
+    <encoding/>
     <error_ignored>N</error_ignored>
+    <error_line_files_destination_directory/>
     <error_line_files_extension>error</error_line_files_extension>
     <error_line_skipped>N</error_line_skipped>
+    <extensionFieldName/>
     <fields>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Sigla Eixo</name>
         <precision>-1</precision>
@@ -1350,6 +1360,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Eixo</name>
         <precision>-1</precision>
@@ -1358,6 +1372,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Sigla Sub-eixo</name>
         <precision>-1</precision>
@@ -1366,6 +1384,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Sub-eixo</name>
         <precision>-1</precision>
@@ -1374,6 +1396,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Exclusividade</name>
         <precision>-1</precision>
@@ -1382,6 +1408,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Função</name>
         <precision>-1</precision>
@@ -1390,6 +1420,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_função</name>
         <precision>-1</precision>
@@ -1398,6 +1432,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Subfunção</name>
         <precision>-1</precision>
@@ -1406,6 +1444,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_subfunção</name>
         <precision>-1</precision>
@@ -1414,6 +1456,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Programa</name>
         <precision>-1</precision>
@@ -1422,6 +1468,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_programa</name>
         <precision>-1</precision>
@@ -1430,6 +1480,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Projativ</name>
         <precision>-1</precision>
@@ -1438,6 +1492,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_projativ</name>
         <precision>-1</precision>
@@ -1446,6 +1504,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Subitem_projativ</name>
         <precision>-1</precision>
@@ -1454,6 +1516,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_subitem_projativ</name>
         <precision>-1</precision>
@@ -1462,6 +1528,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Índice_proporcionalidade</name>
         <precision>-1</precision>
@@ -1470,6 +1540,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Orçado</name>
         <precision>-1</precision>
@@ -1478,6 +1552,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Empenhado</name>
         <precision>-1</precision>
@@ -1486,6 +1564,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Liquidado</name>
         <precision>-1</precision>
@@ -1494,6 +1576,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Pago</name>
         <precision>-1</precision>
@@ -1502,6 +1588,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Sigla Eixo_1</name>
         <precision>-1</precision>
@@ -1510,6 +1600,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Eixo_1</name>
         <precision>-1</precision>
@@ -1518,6 +1612,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Sigla Sub-eixo_1</name>
         <precision>-1</precision>
@@ -1526,6 +1624,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Sub-eixo_1</name>
         <precision>-1</precision>
@@ -1534,6 +1636,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Exclusividade_1</name>
         <precision>-1</precision>
@@ -1542,6 +1648,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Função_1</name>
         <precision>-1</precision>
@@ -1550,6 +1660,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_função_1</name>
         <precision>-1</precision>
@@ -1558,6 +1672,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Subfunção_1</name>
         <precision>-1</precision>
@@ -1566,6 +1684,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_subfunção_1</name>
         <precision>-1</precision>
@@ -1574,6 +1696,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Programa_1</name>
         <precision>-1</precision>
@@ -1582,6 +1708,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_programa_1</name>
         <precision>-1</precision>
@@ -1590,6 +1720,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Projativ_1</name>
         <precision>-1</precision>
@@ -1598,6 +1732,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_projativ_1</name>
         <precision>-1</precision>
@@ -1606,6 +1744,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Subitem_projativ_1</name>
         <precision>-1</precision>
@@ -1614,6 +1756,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_subitem_projativ_1</name>
         <precision>-1</precision>
@@ -1622,6 +1768,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Índice_proporcionalidade_1</name>
         <precision>-1</precision>
@@ -1630,6 +1780,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Orçado_1</name>
         <precision>-1</precision>
@@ -1638,6 +1792,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Empenhado_1</name>
         <precision>-1</precision>
@@ -1646,6 +1804,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Liquidado_1</name>
         <precision>-1</precision>
@@ -1654,6 +1816,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Pago_1</name>
         <precision>-1</precision>
@@ -1662,6 +1828,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Sigla Eixo_2</name>
         <precision>-1</precision>
@@ -1670,6 +1840,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Eixo_2</name>
         <precision>-1</precision>
@@ -1678,6 +1852,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Sigla Sub-eixo_2</name>
         <precision>-1</precision>
@@ -1686,6 +1864,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Sub-eixo_2</name>
         <precision>-1</precision>
@@ -1694,6 +1876,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Exclusividade_2</name>
         <precision>-1</precision>
@@ -1702,6 +1888,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Função_2</name>
         <precision>-1</precision>
@@ -1710,6 +1900,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_função_2</name>
         <precision>-1</precision>
@@ -1718,6 +1912,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Subfunção_2</name>
         <precision>-1</precision>
@@ -1726,6 +1924,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_subfunção_2</name>
         <precision>-1</precision>
@@ -1734,6 +1936,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Programa_2</name>
         <precision>-1</precision>
@@ -1742,6 +1948,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_programa_2</name>
         <precision>-1</precision>
@@ -1750,6 +1960,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Projativ_2</name>
         <precision>-1</precision>
@@ -1758,6 +1972,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_projativ_2</name>
         <precision>-1</precision>
@@ -1766,6 +1984,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Subitem_projativ_2</name>
         <precision>-1</precision>
@@ -1774,6 +1996,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Nome_subitem_projativ_2</name>
         <precision>-1</precision>
@@ -1782,6 +2008,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Índice_proporcionalidade_2</name>
         <precision>-1</precision>
@@ -1790,6 +2020,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Orçado_2</name>
         <precision>-1</precision>
@@ -1798,6 +2032,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Empenhado_2</name>
         <precision>-1</precision>
@@ -1806,6 +2044,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Liquidado_2</name>
         <precision>-1</precision>
@@ -1814,6 +2056,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>Pago_2</name>
         <precision>-1</precision>
@@ -1823,14 +2069,26 @@
       </field>
     </fields>
     <file>
+      <exclude_filemask/>
       <file_required>N</file_required>
+      <filemask/>
       <include_subfolders>N</include_subfolders>
-      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023</name>
+      <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023</name>
     </file>
+    <filefield/>
     <header>Y</header>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
     <limit>0</limit>
+    <line_number_files_destination_directory/>
     <line_number_files_extension>line</line_number_files_extension>
     <noempty>Y</noempty>
+    <pathFieldName/>
+    <rootUriNameFieldName/>
+    <rownumfield/>
+    <schema_definition/>
+    <sheetfield/>
+    <sheetrownumfield/>
     <sheets>
       <sheet>
         <name>2023 oca 1 q</name>
@@ -1848,9 +2106,12 @@
         <startrow>1</startrow>
       </sheet>
     </sheets>
+    <shortFileFieldName/>
+    <sizeFieldName/>
     <spreadsheet_type>POI</spreadsheet_type>
     <stoponempty>N</stoponempty>
     <strict_types>N</strict_types>
+    <uriNameFieldName/>
     <attributes/>
     <GUI>
       <xloc>240</xloc>
@@ -1868,14 +2129,24 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <accept_field/>
     <accept_filenames>N</accept_filenames>
+    <accept_transform_name/>
     <add_to_result_filenames>Y</add_to_result_filenames>
+    <bad_line_files_destination_directory/>
     <bad_line_files_extension>warning</bad_line_files_extension>
+    <encoding/>
     <error_ignored>N</error_ignored>
+    <error_line_files_destination_directory/>
     <error_line_files_extension>error</error_line_files_extension>
     <error_line_skipped>N</error_line_skipped>
+    <extensionFieldName/>
     <fields>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>EIXO</name>
         <precision>-1</precision>
@@ -1884,6 +2155,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>SUBEIXO</name>
         <precision>-1</precision>
@@ -1892,6 +2167,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>UO</name>
         <precision>-1</precision>
@@ -1900,6 +2179,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>FUNÇÃO</name>
         <precision>-1</precision>
@@ -1908,6 +2191,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>SUB FUNÇÃO</name>
         <precision>-1</precision>
@@ -1916,6 +2203,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>PROGRAMA</name>
         <precision>-1</precision>
@@ -1924,6 +2215,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>AÇÃO</name>
         <precision>-1</precision>
@@ -1932,6 +2227,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>SUBAÇÃO</name>
         <precision>-1</precision>
@@ -1940,6 +2239,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>TIPO CADASTRO</name>
         <precision>-1</precision>
@@ -1948,6 +2251,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>ÍNDICE</name>
         <precision>-1</precision>
@@ -1956,6 +2263,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR ORÇADO</name>
         <precision>-1</precision>
@@ -1964,6 +2275,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR EMPENHADO</name>
         <precision>-1</precision>
@@ -1972,6 +2287,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR LIQUIDADO</name>
         <precision>-1</precision>
@@ -1980,6 +2299,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR PAGO</name>
         <precision>-1</precision>
@@ -1988,6 +2311,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>EIXO_1</name>
         <precision>-1</precision>
@@ -1996,6 +2323,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>SUBEIXO_1</name>
         <precision>-1</precision>
@@ -2004,6 +2335,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>UO_1</name>
         <precision>-1</precision>
@@ -2012,6 +2347,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>EIXO_2</name>
         <precision>-1</precision>
@@ -2020,6 +2359,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>SUBEIXO_2</name>
         <precision>-1</precision>
@@ -2028,6 +2371,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>UO_2</name>
         <precision>-1</precision>
@@ -2036,6 +2383,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME DA UO</name>
         <precision>-1</precision>
@@ -2044,6 +2395,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>PROGRAMA_1</name>
         <precision>-1</precision>
@@ -2052,6 +2407,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME DO PROGRAMA</name>
         <precision>-1</precision>
@@ -2060,6 +2419,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>AÇÃO_1</name>
         <precision>-1</precision>
@@ -2068,6 +2431,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME DA ACAO</name>
         <precision>-1</precision>
@@ -2076,6 +2443,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>SUBAÇÃO_1</name>
         <precision>-1</precision>
@@ -2084,6 +2455,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME DA SUBACAO</name>
         <precision>-1</precision>
@@ -2092,6 +2467,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>FUNÇÃO_1</name>
         <precision>-1</precision>
@@ -2100,6 +2479,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME DA FUNCAO</name>
         <precision>-1</precision>
@@ -2108,6 +2491,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>SUB FUNÇÃO_1</name>
         <precision>-1</precision>
@@ -2116,6 +2503,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME DA SUBFUNCAO</name>
         <precision>-1</precision>
@@ -2124,6 +2515,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>TIPO CADASTRO_1</name>
         <precision>-1</precision>
@@ -2132,6 +2527,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>ÍNDICE_1</name>
         <precision>-1</precision>
@@ -2140,6 +2539,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR ORÇADO (R$)</name>
         <precision>-1</precision>
@@ -2148,6 +2551,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR EMPENHADO (R$)</name>
         <precision>-1</precision>
@@ -2156,6 +2563,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR LIQUIDADO (R$)</name>
         <precision>-1</precision>
@@ -2164,6 +2575,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR PAGO (R$)</name>
         <precision>-1</precision>
@@ -2173,14 +2588,26 @@
       </field>
     </fields>
     <file>
+      <exclude_filemask/>
       <file_required>N</file_required>
+      <filemask/>
       <include_subfolders>N</include_subfolders>
-      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024</name>
+      <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024</name>
     </file>
+    <filefield/>
     <header>Y</header>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
     <limit>0</limit>
+    <line_number_files_destination_directory/>
     <line_number_files_extension>line</line_number_files_extension>
     <noempty>Y</noempty>
+    <pathFieldName/>
+    <rootUriNameFieldName/>
+    <rownumfield/>
+    <schema_definition/>
+    <sheetfield/>
+    <sheetrownumfield/>
     <sheets>
       <sheet>
         <name>2024 oca 1 q</name>
@@ -2198,9 +2625,12 @@
         <startrow>1</startrow>
       </sheet>
     </sheets>
+    <shortFileFieldName/>
+    <sizeFieldName/>
     <spreadsheet_type>POI</spreadsheet_type>
     <stoponempty>N</stoponempty>
     <strict_types>N</strict_types>
+    <uriNameFieldName/>
     <attributes/>
     <GUI>
       <xloc>240</xloc>
@@ -2218,14 +2648,24 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <accept_field/>
     <accept_filenames>N</accept_filenames>
+    <accept_transform_name/>
     <add_to_result_filenames>Y</add_to_result_filenames>
+    <bad_line_files_destination_directory/>
     <bad_line_files_extension>warning</bad_line_files_extension>
+    <encoding/>
     <error_ignored>N</error_ignored>
+    <error_line_files_destination_directory/>
     <error_line_files_extension>error</error_line_files_extension>
     <error_line_skipped>N</error_line_skipped>
+    <extensionFieldName/>
     <fields>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>CÓDIGO OT</name>
         <precision>-1</precision>
@@ -2234,6 +2674,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>ORÇAMENTO TEMÁTICO</name>
         <precision>-1</precision>
@@ -2242,6 +2686,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>EIXO</name>
         <precision>-1</precision>
@@ -2250,6 +2698,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>SUBEIXO</name>
         <precision>-1</precision>
@@ -2258,6 +2710,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>UO</name>
         <precision>-1</precision>
@@ -2266,6 +2722,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME UO</name>
         <precision>-1</precision>
@@ -2274,6 +2734,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>FUNÇÃO</name>
         <precision>-1</precision>
@@ -2282,6 +2746,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME FUNCÃO</name>
         <precision>-1</precision>
@@ -2290,6 +2758,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>SUBFUNÇÃO</name>
         <precision>-1</precision>
@@ -2298,6 +2770,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME SUBFUNCÃO</name>
         <precision>-1</precision>
@@ -2306,6 +2782,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>PROGRAMA</name>
         <precision>-1</precision>
@@ -2314,6 +2794,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME PROGRAMA</name>
         <precision>-1</precision>
@@ -2322,6 +2806,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>AÇÃO</name>
         <precision>-1</precision>
@@ -2330,6 +2818,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME ACÃO</name>
         <precision>-1</precision>
@@ -2338,6 +2830,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>SUBAÇÃO</name>
         <precision>-1</precision>
@@ -2346,6 +2842,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>NOME SUBAÇÃO</name>
         <precision>-1</precision>
@@ -2354,6 +2854,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>TIPO CADASTRO</name>
         <precision>-1</precision>
@@ -2362,6 +2866,10 @@
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>ÍNDICE</name>
         <precision>-1</precision>
@@ -2370,6 +2878,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR ORÇADO (R$)</name>
         <precision>-1</precision>
@@ -2378,6 +2890,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR EMPENHADO (R$)</name>
         <precision>-1</precision>
@@ -2386,6 +2902,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR LIQUIDADO (R$)</name>
         <precision>-1</precision>
@@ -2394,6 +2914,10 @@
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>VALOR PAGO (R$)</name>
         <precision>-1</precision>
@@ -2403,14 +2927,26 @@
       </field>
     </fields>
     <file>
+      <exclude_filemask/>
       <file_required>N</file_required>
+      <filemask/>
       <include_subfolders>N</include_subfolders>
-      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2025</name>
+      <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2025</name>
     </file>
+    <filefield/>
     <header>Y</header>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
     <limit>0</limit>
+    <line_number_files_destination_directory/>
     <line_number_files_extension>line</line_number_files_extension>
     <noempty>Y</noempty>
+    <pathFieldName/>
+    <rootUriNameFieldName/>
+    <rownumfield/>
+    <schema_definition/>
+    <sheetfield/>
+    <sheetrownumfield/>
     <sheets>
       <sheet>
         <name>Planilha1</name>
@@ -2418,9 +2954,12 @@
         <startrow>1</startrow>
       </sheet>
     </sheets>
+    <shortFileFieldName/>
+    <sizeFieldName/>
     <spreadsheet_type>POI</spreadsheet_type>
     <stoponempty>N</stoponempty>
     <strict_types>N</strict_types>
+    <uriNameFieldName/>
     <attributes/>
     <GUI>
       <xloc>240</xloc>

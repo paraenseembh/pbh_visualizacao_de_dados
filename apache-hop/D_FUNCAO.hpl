@@ -180,6 +180,43 @@
     </GUI>
   </transform>
   <transform>
+    <name>Remover duplicatas</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>codigo_funcao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>nome_funcao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>codigo_sub_funcao</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>nome_sub_funcao</name>
+      </field>
+    </fields>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <attributes/>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>368</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>Select values</name>
     <type>SelectValues</type>
     <description/>
@@ -1413,45 +1450,6 @@
     </GUI>
   </transform>
   <transform>
-    <name>Remover duplicatas</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <count_field/>
-    <count_rows>N</count_rows>
-    <error_description/>
-    <fields>
-      <field>
-        <case_insensitive>N</case_insensitive>
-        <name>codigo_funcao</name>
-      </field>
-      <field>
-        <case_insensitive>N</case_insensitive>
-        <name>nome_funcao</name>
-      </field>
-      <field>
-        <case_insensitive>N</case_insensitive>
-        <name>codigo_sub_funcao</name>
-      </field>
-      <field>
-        <case_insensitive>N</case_insensitive>
-        <name>nome_sub_funcao</name>
-      </field>
-    </fields>
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <attributes/>
-    <GUI>
-      <xloc>1088</xloc>
-      <yloc>368</yloc>
-    </GUI>
-  </transform>
-  <transform>
     <name>funcao_2023_xlsx</name>
     <type>ExcelInput</type>
     <description/>
@@ -1953,7 +1951,7 @@
     <file>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
-      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023</name>
+      <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023</name>
     </file>
     <header>Y</header>
     <limit>0</limit>
@@ -2327,12 +2325,12 @@
     <file>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
-      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-2-quad-2024-versao-1.xlsx</name>
+      <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-2-quad-2024-versao-1.xlsx</name>
     </file>
     <file>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
-      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-3-quad-2024-versao-1.xlsx</name>
+      <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-3-quad-2024-versao-1.xlsx</name>
     </file>
     <header>Y</header>
     <limit>0</limit>
@@ -2557,7 +2555,7 @@
     <file>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
-      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2025</name>
+      <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2025</name>
     </file>
     <header>Y</header>
     <limit>0</limit>

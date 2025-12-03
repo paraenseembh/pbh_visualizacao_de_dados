@@ -256,8 +256,8 @@
     <update_bypassed>N</update_bypassed>
     <attributes/>
     <GUI>
-      <xloc>3040</xloc>
-      <yloc>624</yloc>
+      <xloc>2016</xloc>
+      <yloc>400</yloc>
     </GUI>
   </transform>
   <transform>
@@ -324,8 +324,8 @@
     <send_false_to>Remover duplicatas</send_false_to>
     <attributes/>
     <GUI>
-      <xloc>1344</xloc>
-      <yloc>624</yloc>
+      <xloc>1232</xloc>
+      <yloc>512</yloc>
     </GUI>
   </transform>
   <transform>
@@ -510,7 +510,7 @@
     <file>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
-      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023\ot-oca-3-quad-2023-versao-1.xlsx</name>
+      <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023\ot-oca-3-quad-2023-versao-1.xlsx</name>
     </file>
     <header>Y</header>
     <limit>0</limit>
@@ -714,7 +714,7 @@
     <file>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
-      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-3-quad-2024-versao-1.xlsx</name>
+      <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-3-quad-2024-versao-1.xlsx</name>
     </file>
     <header>Y</header>
     <limit>0</limit>
@@ -934,7 +934,7 @@
     <file>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
-      <name>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\dados\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2025\ot-oca-2-quad-2025-versao-1.xlsx</name>
+      <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2025\ot-oca-2-quad-2025-versao-1.xlsx</name>
     </file>
     <header>Y</header>
     <limit>0</limit>
@@ -1025,8 +1025,8 @@
     <reject_duplicate_row>N</reject_duplicate_row>
     <attributes/>
     <GUI>
-      <xloc>1472</xloc>
-      <yloc>624</yloc>
+      <xloc>1344</xloc>
+      <yloc>512</yloc>
     </GUI>
   </transform>
   <transform>
@@ -1100,8 +1100,8 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>2544</xloc>
-      <yloc>624</yloc>
+      <xloc>2016</xloc>
+      <yloc>528</yloc>
     </GUI>
   </transform>
   <transform>
@@ -2068,8 +2068,8 @@
     <unique_rows>N</unique_rows>
     <attributes/>
     <GUI>
-      <xloc>2736</xloc>
-      <yloc>624</yloc>
+      <xloc>1840</xloc>
+      <yloc>528</yloc>
     </GUI>
   </transform>
   <transform>
@@ -2106,7 +2106,7 @@
     </lookup>
     <attributes/>
     <GUI>
-      <xloc>2000</xloc>
+      <xloc>1680</xloc>
       <yloc>624</yloc>
     </GUI>
   </transform>
@@ -2144,7 +2144,7 @@
     </lookup>
     <attributes/>
     <GUI>
-      <xloc>1840</xloc>
+      <xloc>1520</xloc>
       <yloc>624</yloc>
     </GUI>
   </transform>
@@ -2182,7 +2182,7 @@
     </lookup>
     <attributes/>
     <GUI>
-      <xloc>2160</xloc>
+      <xloc>1840</xloc>
       <yloc>624</yloc>
     </GUI>
   </transform>
@@ -2216,7 +2216,7 @@
     </lookup>
     <attributes/>
     <GUI>
-      <xloc>1664</xloc>
+      <xloc>1344</xloc>
       <yloc>624</yloc>
     </GUI>
   </transform>
@@ -2256,7 +2256,7 @@
     </lookup>
     <attributes/>
     <GUI>
-      <xloc>2336</xloc>
+      <xloc>2016</xloc>
       <yloc>624</yloc>
     </GUI>
   </transform>
@@ -2352,8 +2352,8 @@
     <reject_duplicate_row>N</reject_duplicate_row>
     <attributes/>
     <GUI>
-      <xloc>2880</xloc>
-      <yloc>624</yloc>
+      <xloc>1840</xloc>
+      <yloc>400</yloc>
     </GUI>
   </transform>
   <transform>
@@ -2545,7 +2545,7 @@ FROM dw.d_acao
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
-      <xloc>2000</xloc>
+      <xloc>1680</xloc>
       <yloc>720</yloc>
     </GUI>
   </transform>
@@ -2572,7 +2572,7 @@ FROM dw.d_eixo
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
-      <xloc>1840</xloc>
+      <xloc>1520</xloc>
       <yloc>720</yloc>
     </GUI>
   </transform>
@@ -2599,7 +2599,7 @@ FROM dw.d_funcao
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
-      <xloc>2160</xloc>
+      <xloc>1840</xloc>
       <yloc>720</yloc>
     </GUI>
   </transform>
@@ -2625,7 +2625,7 @@ FROM dw.d_programa
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
-      <xloc>1664</xloc>
+      <xloc>1344</xloc>
       <yloc>720</yloc>
     </GUI>
   </transform>
@@ -2651,7 +2651,7 @@ FROM dw.d_tempo
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
-      <xloc>2336</xloc>
+      <xloc>2016</xloc>
       <yloc>720</yloc>
     </GUI>
   </transform>

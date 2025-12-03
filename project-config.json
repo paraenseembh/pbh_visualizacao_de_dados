@@ -1,0 +1,14 @@
+{
+  "metadataBaseFolder" : "${PROJECT_HOME}/metadata",
+  "unitTestsBasePath" : "${PROJECT_HOME}",
+  "dataSetsCsvFolder" : "${PROJECT_HOME}/datasets",
+  "enforcingExecutionInHome" : true,
+  "parentProjectName" : "default",
+  "config" : {
+    "variables" : [ {
+      "name" : "PROJECT_DATA",
+      "value" : "${PROJECT_HOME}/dados",
+      "description" : "Pasta que contém os dados do projeto"
+    } ]
+  }
+}
