@@ -39,7 +39,7 @@
       <connections>
         <connection>
           <name>DESTINO</name>
-          <waitfor/>
+          <waitfor>0</waitfor>
           <waittime>millisecond</waittime>
         </connection>
       </connections>
@@ -59,9 +59,7 @@
       <clear_rows>N</clear_rows>
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
-      <filename>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\apache-hop\D_TEMPO.hpl</filename>
-      <logext/>
-      <logfile/>
+      <filename>${PROJECT_HOME}\apache-hop\D_TEMPO.hpl</filename>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -87,9 +85,7 @@
       <clear_rows>N</clear_rows>
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
-      <filename>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\apache-hop\D_PROGRAMA.hpl</filename>
-      <logext/>
-      <logfile/>
+      <filename>${PROJECT_HOME}\apache-hop\D_PROGRAMA.hpl</filename>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -115,9 +111,7 @@
       <clear_rows>N</clear_rows>
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
-      <filename>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\apache-hop\D_FUNCAO.hpl</filename>
-      <logext/>
-      <logfile/>
+      <filename>${PROJECT_HOME}/apache-hop/D_FUNCAO.hpl</filename>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -143,9 +137,7 @@
       <clear_rows>N</clear_rows>
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
-      <filename>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\apache-hop\D_EIXO.hpl</filename>
-      <logext/>
-      <logfile/>
+      <filename>${PROJECT_HOME}\apache-hop\D_EIXO.hpl</filename>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -171,9 +163,7 @@
       <clear_rows>N</clear_rows>
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
-      <filename>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\apache-hop\D_ACAO.hpl</filename>
-      <logext/>
-      <logfile/>
+      <filename>${PROJECT_HOME}/apache-hop/D_ACAO.hpl</filename>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
@@ -199,9 +189,7 @@
       <clear_rows>N</clear_rows>
       <create_parent_folder>N</create_parent_folder>
       <exec_per_row>N</exec_per_row>
-      <filename>C:\Users\rafae\OneDrive\Área de Trabalho\pbh_visualizacao_de_dados\apache-hop\fato.hpl</filename>
-      <logext/>
-      <logfile/>
+      <filename>${PROJECT_HOME}\apache-hop\fato.hpl</filename>
       <loglevel>Basic</loglevel>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>

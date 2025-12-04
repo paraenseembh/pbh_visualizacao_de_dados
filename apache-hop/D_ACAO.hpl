@@ -133,24 +133,28 @@
         <condition>=</condition>
         <field>codigo_acao</field>
         <name>codigo_acao</name>
+        <name2/>
       </key>
       <key>
         <condition>=</condition>
         <field>nome_acao</field>
         <name>nome_acao</name>
+        <name2/>
       </key>
       <key>
         <condition>=</condition>
         <field>codigo_subacao</field>
         <name>codigo_subacao</name>
+        <name2/>
       </key>
       <key>
         <condition>=</condition>
         <field>nome_subacao</field>
         <name>nome_subacao</name>
+        <name2/>
       </key>
       <schema/>
-      <table>d_acao</table>
+      <table>D_ACAO</table>
       <value>
         <name>codigo_acao</name>
         <rename>codigo_acao</rename>

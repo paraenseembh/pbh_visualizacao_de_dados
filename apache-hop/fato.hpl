@@ -195,8 +195,8 @@
         <field>sk_tempo</field>
         <name>sk_tempo</name>
       </key>
-      <schema>dw</schema>
-      <table>f_orçamento_tematico</table>
+      <schema>DW</schema>
+      <table>F_ORÇAMENTO_TEMATICO</table>
       <value>
         <name>sk_acao</name>
         <rename>sk_acao</rename>
@@ -2287,7 +2287,7 @@
     </fields>
     <attributes/>
     <GUI>
-      <xloc>768</xloc>
+      <xloc>752</xloc>
       <yloc>720</yloc>
     </GUI>
   </transform>
@@ -2540,7 +2540,7 @@
   sk_acao
 , codigo_acao
 , codigo_subacao
-FROM dw.d_acao
+FROM DW.D_ACAO
 </sql>
     <variables_active>N</variables_active>
     <attributes/>
@@ -2567,7 +2567,7 @@ FROM dw.d_acao
   sk_eixo
 , nome_eixo
 , nome_subeixo
-FROM dw.d_eixo
+FROM DW.D_EIXO
 </sql>
     <variables_active>N</variables_active>
     <attributes/>
@@ -2594,7 +2594,7 @@ FROM dw.d_eixo
   sk_funcao
 , codigo_funcao
 , codigo_subfuncao
-FROM dw.d_funcao
+FROM DW.D_FUNCAO
 </sql>
     <variables_active>N</variables_active>
     <attributes/>
@@ -2620,7 +2620,7 @@ FROM dw.d_funcao
     <sql>SELECT
   sk_programa
 , codigo_programa
-FROM dw.d_programa
+FROM DW.D_PROGRAMA
 </sql>
     <variables_active>N</variables_active>
     <attributes/>
@@ -2646,7 +2646,7 @@ FROM dw.d_programa
     <sql>SELECT
   sk_tempo
 , quadrimestre_ano
-FROM dw.d_tempo
+FROM DW.D_TEMPO
 </sql>
     <variables_active>N</variables_active>
     <attributes/>
