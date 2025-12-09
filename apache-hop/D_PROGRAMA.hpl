@@ -75,7 +75,150 @@
       <to>Remover duplicatas</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Remover duplicatas</from>
+      <to>Criar Planilha</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
+  <transform>
+    <name>Criar Planilha</name>
+    <type>TypeExitExcelWriterTransform</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <appendEmpty>0</appendEmpty>
+    <appendLines>N</appendLines>
+    <appendOffset>0</appendOffset>
+    <appendOmitHeader>N</appendOmitHeader>
+    <fields>
+      <field>
+        <formula>N</formula>
+        <name>exercicio</name>
+        <title>exercicio</title>
+        <type>Integer</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>codigo_area_resultado</name>
+        <title>codigo_area_resultado</title>
+        <type>Integer</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>nome_area_resultado</name>
+        <title>nome_area_resultado</title>
+        <type>String</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>codigo_programa</name>
+        <title>codigo_programa</title>
+        <type>Integer</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>nome_programa</name>
+        <title>nome_programa</title>
+        <type>String</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>objetivo</name>
+        <title>objetivo</title>
+        <type>String</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>publico_alvo</name>
+        <title>publico_alvo</title>
+        <type>String</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>justificativa</name>
+        <title>justificativa</title>
+        <type>String</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>natureza</name>
+        <title>natureza</title>
+        <type>String</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>tipologia</name>
+        <title>tipologia</title>
+        <type>String</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>classificacao_de_governo</name>
+        <title>classificacao_de_governo</title>
+        <type>String</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>data_inicio</name>
+        <title>data_inicio</title>
+        <type>Date</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>data_fim</name>
+        <title>data_fim</title>
+        <type>Date</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>unidade_gestora</name>
+        <title>unidade_gestora</title>
+        <type>String</type>
+      </field>
+    </fields>
+    <file>
+      <SpecifyFormat>N</SpecifyFormat>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <autosizecolums>N</autosizecolums>
+      <createParentFolder>Y</createParentFolder>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <extension>xlsx</extension>
+      <filename_in_field>N</filename_in_field>
+      <if_file_exists>new</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+      <name>${PROJECT_HOME}/dados/outputs_etl/D_PROGRAMA</name>
+      <protect_sheet>N</protect_sheet>
+      <sheetname>Sheet1</sheetname>
+      <split>N</split>
+      <splitevery>0</splitevery>
+      <stream_data>N</stream_data>
+    </file>
+    <footer>N</footer>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <header>Y</header>
+    <leaveExistingStylesUnchanged>N</leaveExistingStylesUnchanged>
+    <makeSheetActive>Y</makeSheetActive>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <startingCell>A1</startingCell>
+    <template>
+      <enabled>N</enabled>
+      <hidden>N</hidden>
+      <sheet_enabled>N</sheet_enabled>
+    </template>
+    <attributes/>
+    <GUI>
+      <xloc>944</xloc>
+      <yloc>176</yloc>
+    </GUI>
+  </transform>
   <transform>
     <name>Insert / update</name>
     <type>InsertUpdate</type>
@@ -177,7 +320,7 @@
     <attributes/>
     <GUI>
       <xloc>944</xloc>
-      <yloc>240</yloc>
+      <yloc>288</yloc>
     </GUI>
   </transform>
   <transform>
@@ -1460,7 +1603,7 @@
     <name>Remover duplicatas</name>
     <type>Unique</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>

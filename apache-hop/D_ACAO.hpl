@@ -51,29 +51,34 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Filter rows</from>
-      <to>Insert / update</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Sort rows</from>
       <to>Upper case</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Upper case</from>
+      <to>Remover Nulos</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Remover Nulos</from>
       <to>Remover duplicatas</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Remover duplicatas</from>
-      <to>Filter rows</to>
+      <to>Criar Planilha</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Remover duplicatas</from>
+      <to>Insert / update</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <transform>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
+    <name>Criar Planilha</name>
+    <type>TypeExitExcelWriterTransform</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -82,37 +87,71 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <compare>
-      <condition>
-        <conditions>
-          <condition>
-            <conditions>
-</conditions>
-            <function>IS NULL</function>
-            <leftvalue>codigo_acao</leftvalue>
-            <negated>N</negated>
-            <operator>-</operator>
-          </condition>
-          <condition>
-            <conditions>
-</conditions>
-            <function>IS NULL</function>
-            <leftvalue>codigo_subacao</leftvalue>
-            <negated>N</negated>
-            <operator>OR</operator>
-          </condition>
-        </conditions>
-        <function>IS NULL</function>
-        <leftvalue>eixo_normalizado</leftvalue>
-        <negated>N</negated>
-        <operator>-</operator>
-      </condition>
-    </compare>
-    <send_false_to>Insert / update</send_false_to>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <appendEmpty>0</appendEmpty>
+    <appendLines>N</appendLines>
+    <appendOffset>0</appendOffset>
+    <appendOmitHeader>N</appendOmitHeader>
+    <fields>
+      <field>
+        <formula>N</formula>
+        <name>codigo_acao</name>
+        <title>codigo_acao</title>
+        <type>Integer</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>nome_acao</name>
+        <title>nome_acao</title>
+        <type>String</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>codigo_subacao</name>
+        <title>codigo_subacao</title>
+        <type>Integer</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>nome_subacao</name>
+        <title>nome_subacao</title>
+        <type>String</type>
+      </field>
+    </fields>
+    <file>
+      <SpecifyFormat>N</SpecifyFormat>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <autosizecolums>N</autosizecolums>
+      <createParentFolder>Y</createParentFolder>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <extension>xlsx</extension>
+      <filename_in_field>N</filename_in_field>
+      <if_file_exists>new</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+      <name>${PROJECT_HOME}/dados/outputs_etl/D_ACAO</name>
+      <protect_sheet>N</protect_sheet>
+      <sheetname>Sheet1</sheetname>
+      <split>N</split>
+      <splitevery>0</splitevery>
+      <stream_data>N</stream_data>
+    </file>
+    <footer>N</footer>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <header>Y</header>
+    <leaveExistingStylesUnchanged>N</leaveExistingStylesUnchanged>
+    <makeSheetActive>Y</makeSheetActive>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <startingCell>A1</startingCell>
+    <template>
+      <enabled>N</enabled>
+      <hidden>N</hidden>
+      <sheet_enabled>N</sheet_enabled>
+    </template>
     <attributes/>
     <GUI>
-      <xloc>864</xloc>
-      <yloc>288</yloc>
+      <xloc>1024</xloc>
+      <yloc>208</yloc>
     </GUI>
   </transform>
   <transform>
@@ -133,25 +172,21 @@
         <condition>=</condition>
         <field>codigo_acao</field>
         <name>codigo_acao</name>
-        <name2/>
       </key>
       <key>
         <condition>=</condition>
         <field>nome_acao</field>
         <name>nome_acao</name>
-        <name2/>
       </key>
       <key>
         <condition>=</condition>
         <field>codigo_subacao</field>
         <name>codigo_subacao</name>
-        <name2/>
       </key>
       <key>
         <condition>=</condition>
         <field>nome_subacao</field>
         <name>nome_subacao</name>
-        <name2/>
       </key>
       <schema/>
       <table>D_ACAO</table>
@@ -179,7 +214,7 @@
     <update_bypassed>N</update_bypassed>
     <attributes/>
     <GUI>
-      <xloc>992</xloc>
+      <xloc>1024</xloc>
       <yloc>288</yloc>
     </GUI>
   </transform>
@@ -812,10 +847,54 @@
     </GUI>
   </transform>
   <transform>
+    <name>Remover Nulos</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+          <condition>
+            <conditions>
+</conditions>
+            <function>IS NULL</function>
+            <leftvalue>codigo_acao</leftvalue>
+            <negated>N</negated>
+            <operator>-</operator>
+          </condition>
+          <condition>
+            <conditions>
+</conditions>
+            <function>IS NULL</function>
+            <leftvalue>codigo_subacao</leftvalue>
+            <negated>N</negated>
+            <operator>OR</operator>
+          </condition>
+        </conditions>
+        <function>IS NULL</function>
+        <leftvalue>eixo_normalizado</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+      </condition>
+    </compare>
+    <send_false_to>Remover duplicatas</send_false_to>
+    <attributes/>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>288</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>Remover duplicatas</name>
     <type>Unique</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -836,7 +915,7 @@
     <reject_duplicate_row>N</reject_duplicate_row>
     <attributes/>
     <GUI>
-      <xloc>736</xloc>
+      <xloc>864</xloc>
       <yloc>288</yloc>
     </GUI>
   </transform>

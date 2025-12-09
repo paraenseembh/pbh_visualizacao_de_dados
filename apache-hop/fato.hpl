@@ -155,6 +155,11 @@
       <to>Carregamento para o DW</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Unique rows</from>
+      <to>Criar Planilha</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <transform>
     <name>Carregamento para o DW</name>
@@ -258,6 +263,199 @@
     <GUI>
       <xloc>2016</xloc>
       <yloc>400</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Criar Planilha</name>
+    <type>TypeExitExcelWriterTransform</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <appendEmpty>0</appendEmpty>
+    <appendLines>N</appendLines>
+    <appendOffset>0</appendOffset>
+    <appendOmitHeader>N</appendOmitHeader>
+    <fields>
+      <field>
+        <commentAuthorField/>
+        <commentField/>
+        <format/>
+        <formula>N</formula>
+        <hyperlinkField/>
+        <name>sk_acao</name>
+        <styleCell/>
+        <title>sk_acao</title>
+        <titleStyleCell/>
+        <type>Integer</type>
+      </field>
+      <field>
+        <commentAuthorField/>
+        <commentField/>
+        <format/>
+        <formula>N</formula>
+        <hyperlinkField/>
+        <name>sk_eixo</name>
+        <styleCell/>
+        <title>sk_eixo</title>
+        <titleStyleCell/>
+        <type>Integer</type>
+      </field>
+      <field>
+        <commentAuthorField/>
+        <commentField/>
+        <format/>
+        <formula>N</formula>
+        <hyperlinkField/>
+        <name>sk_funcao</name>
+        <styleCell/>
+        <title>sk_funcao</title>
+        <titleStyleCell/>
+        <type>Integer</type>
+      </field>
+      <field>
+        <commentAuthorField/>
+        <commentField/>
+        <format/>
+        <formula>N</formula>
+        <hyperlinkField/>
+        <name>sk_programa</name>
+        <styleCell/>
+        <title>sk_programa</title>
+        <titleStyleCell/>
+        <type>Integer</type>
+      </field>
+      <field>
+        <commentAuthorField/>
+        <commentField/>
+        <format/>
+        <formula>N</formula>
+        <hyperlinkField/>
+        <name>sk_tempo</name>
+        <styleCell/>
+        <title>sk_tempo</title>
+        <titleStyleCell/>
+        <type>Integer</type>
+      </field>
+      <field>
+        <commentAuthorField/>
+        <commentField/>
+        <format/>
+        <formula>N</formula>
+        <hyperlinkField/>
+        <name>tipo_cadastro</name>
+        <styleCell/>
+        <title>tipo_cadastro</title>
+        <titleStyleCell/>
+        <type>String</type>
+      </field>
+      <field>
+        <commentAuthorField/>
+        <commentField/>
+        <format/>
+        <formula>N</formula>
+        <hyperlinkField/>
+        <name>indice</name>
+        <styleCell/>
+        <title>indice</title>
+        <titleStyleCell/>
+        <type>Number</type>
+      </field>
+      <field>
+        <commentAuthorField/>
+        <commentField/>
+        <format/>
+        <formula>N</formula>
+        <hyperlinkField/>
+        <name>valor_empenhado</name>
+        <styleCell/>
+        <title>valor_empenhado</title>
+        <titleStyleCell/>
+        <type>Number</type>
+      </field>
+      <field>
+        <commentAuthorField/>
+        <commentField/>
+        <format/>
+        <formula>N</formula>
+        <hyperlinkField/>
+        <name>valor_liquidado</name>
+        <styleCell/>
+        <title>valor_liquidado</title>
+        <titleStyleCell/>
+        <type>Number</type>
+      </field>
+      <field>
+        <commentAuthorField/>
+        <commentField/>
+        <format/>
+        <formula>N</formula>
+        <hyperlinkField/>
+        <name>valor_orcado</name>
+        <styleCell/>
+        <title>valor_orcado</title>
+        <titleStyleCell/>
+        <type>Number</type>
+      </field>
+      <field>
+        <commentAuthorField/>
+        <commentField/>
+        <format/>
+        <formula>N</formula>
+        <hyperlinkField/>
+        <name>valor_pago</name>
+        <styleCell/>
+        <title>valor_pago</title>
+        <titleStyleCell/>
+        <type>Number</type>
+      </field>
+    </fields>
+    <file>
+      <SpecifyFormat>N</SpecifyFormat>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <autosizecolums>N</autosizecolums>
+      <createParentFolder>Y</createParentFolder>
+      <date_time_format/>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <extension>xlsx</extension>
+      <filename_field/>
+      <filename_in_field>N</filename_in_field>
+      <if_file_exists>new</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+      <name>${PROJECT_HOME}/dados/outputs_etl/F_ORCAMENTO_TEMATICO</name>
+      <password/>
+      <protect_sheet>N</protect_sheet>
+      <protected_by/>
+      <sheetname>Sheet1</sheetname>
+      <split>N</split>
+      <splitevery>0</splitevery>
+      <stream_data>N</stream_data>
+    </file>
+    <footer>N</footer>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <header>Y</header>
+    <leaveExistingStylesUnchanged>N</leaveExistingStylesUnchanged>
+    <makeSheetActive>Y</makeSheetActive>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <schemaDefinition/>
+    <startingCell>A1</startingCell>
+    <template>
+      <enabled>N</enabled>
+      <filename/>
+      <hidden>N</hidden>
+      <sheet_enabled>N</sheet_enabled>
+      <sheetname/>
+    </template>
+    <attributes/>
+    <GUI>
+      <xloc>2016</xloc>
+      <yloc>320</yloc>
     </GUI>
   </transform>
   <transform>
@@ -2295,7 +2493,7 @@
     <name>Unique rows</name>
     <type>Unique</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>

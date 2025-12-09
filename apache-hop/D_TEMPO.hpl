@@ -36,24 +36,19 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>quadrimestre_ano  cadastrado?</from>
+      <from>Quadrimestre_Ano</from>
       <to>D_TEMPO</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Quadrimestre_Ano</from>
-      <to>Database lookup</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Database lookup</from>
-      <to>quadrimestre_ano  cadastrado?</to>
+      <to>Criar planilha</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <transform>
-    <name>D_TEMPO</name>
-    <type>TableOutput</type>
+    <name>Criar planilha</name>
+    <type>TypeExitExcelWriterTransform</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -62,48 +57,76 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <commit>1000</commit>
-    <connection>DESTINO</connection>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <appendEmpty>0</appendEmpty>
+    <appendLines>N</appendLines>
+    <appendOffset>0</appendOffset>
+    <appendOmitHeader>N</appendOmitHeader>
     <fields>
       <field>
-        <column_name>ano_exercicio_orcamentario</column_name>
-        <stream_name>ano_exercicio_orcamentario</stream_name>
+        <formula>N</formula>
+        <name>num_quadrimestre</name>
+        <title>num_quadrimestre</title>
+        <type>Integer</type>
       </field>
       <field>
-        <column_name>quadrimestre</column_name>
-        <stream_name>quadrimestre</stream_name>
+        <formula>N</formula>
+        <name>ano_exercicio_orcamentario</name>
+        <title>ano_exercicio_orcamentario</title>
+        <type>Integer</type>
       </field>
       <field>
-        <column_name>quadrimestre_ano</column_name>
-        <stream_name>quadrimestre_ano</stream_name>
+        <formula>N</formula>
+        <name>quadrimestre</name>
+        <title>quadrimestre</title>
+        <type>String</type>
       </field>
       <field>
-        <column_name>num_quadrimestre</column_name>
-        <stream_name>num_quadrimestre</stream_name>
+        <formula>N</formula>
+        <name>quadrimestre_ano</name>
+        <title>quadrimestre_ano</title>
+        <type>String</type>
       </field>
     </fields>
-    <ignore_errors>N</ignore_errors>
-    <only_when_have_rows>N</only_when_have_rows>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <return_keys>N</return_keys>
-    <schema>DW</schema>
-    <specify_fields>Y</specify_fields>
-    <table>D_TEMPO</table>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_in_table>Y</tablename_in_table>
-    <truncate>N</truncate>
-    <use_batch>Y</use_batch>
+    <file>
+      <SpecifyFormat>N</SpecifyFormat>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <autosizecolums>N</autosizecolums>
+      <createParentFolder>Y</createParentFolder>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <extension>xlsx</extension>
+      <filename_in_field>N</filename_in_field>
+      <if_file_exists>new</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+      <name>${PROJECT_HOME}/dados/outputs_etl/D_TEMPO</name>
+      <protect_sheet>N</protect_sheet>
+      <sheetname>Sheet1</sheetname>
+      <split>N</split>
+      <splitevery>0</splitevery>
+      <stream_data>N</stream_data>
+    </file>
+    <footer>N</footer>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <header>Y</header>
+    <leaveExistingStylesUnchanged>N</leaveExistingStylesUnchanged>
+    <makeSheetActive>Y</makeSheetActive>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <startingCell>A1</startingCell>
+    <template>
+      <enabled>N</enabled>
+      <hidden>N</hidden>
+      <sheet_enabled>N</sheet_enabled>
+    </template>
     <attributes/>
     <GUI>
-      <xloc>1168</xloc>
-      <yloc>256</yloc>
+      <xloc>944</xloc>
+      <yloc>192</yloc>
     </GUI>
   </transform>
   <transform>
-    <name>Database lookup</name>
-    <type>DBLookup</type>
+    <name>D_TEMPO</name>
+    <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -112,13 +135,9 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <cache>N</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>0</cache_size>
+    <commit>100</commit>
     <connection>DESTINO</connection>
     <lookup>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <fail_on_multiple>N</fail_on_multiple>
       <key>
         <condition>=</condition>
         <field>quadrimestre_ano</field>
@@ -127,16 +146,31 @@
       <schema>DW</schema>
       <table>D_TEMPO</table>
       <value>
+        <name>num_quadrimestre</name>
+        <rename>num_quadrimestre</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ano_exercicio_orcamentario</name>
+        <rename>ano_exercicio_orcamentario</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>quadrimestre</name>
+        <rename>quadrimestre</rename>
+        <update>Y</update>
+      </value>
+      <value>
         <name>quadrimestre_ano</name>
-        <rename>quad_ano_dw</rename>
-        <trim_type>none</trim_type>
-        <type>String</type>
+        <rename>quadrimestre_ano</rename>
+        <update>Y</update>
       </value>
     </lookup>
+    <update_bypassed>N</update_bypassed>
     <attributes/>
     <GUI>
-      <xloc>752</xloc>
-      <yloc>256</yloc>
+      <xloc>944</xloc>
+      <yloc>80</yloc>
     </GUI>
   </transform>
   <transform>
@@ -210,65 +244,47 @@
     </partitioning>
     <doNotFailIfNoFile>N</doNotFailIfNoFile>
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
-    <exclude_wildcard_Field/>
     <file>
-      <exclude_filemask/>
       <file_required>N</file_required>
-      <filemask/>
       <include_subfolders>N</include_subfolders>
       <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-1-quad-2024-versao-1-1.xlsx</name>
     </file>
     <file>
-      <exclude_filemask/>
       <file_required>N</file_required>
-      <filemask/>
       <include_subfolders>N</include_subfolders>
       <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-2-quad-2024-versao-1.xlsx</name>
     </file>
     <file>
-      <exclude_filemask/>
       <file_required>N</file_required>
-      <filemask/>
       <include_subfolders>N</include_subfolders>
       <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2024\ot-oca-3-quad-2024-versao-1.xlsx</name>
     </file>
     <file>
-      <exclude_filemask/>
       <file_required>N</file_required>
-      <filemask/>
       <include_subfolders>N</include_subfolders>
       <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023\ot-oca-1-quad-2023-versao-1.xlsx</name>
     </file>
     <file>
-      <exclude_filemask/>
       <file_required>N</file_required>
-      <filemask/>
       <include_subfolders>N</include_subfolders>
       <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023\ot-oca-2-quad-2023-versao-1.xlsx</name>
     </file>
     <file>
-      <exclude_filemask/>
       <file_required>N</file_required>
-      <filemask/>
       <include_subfolders>N</include_subfolders>
       <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2023\ot-oca-3-quad-2023-versao-1.xlsx</name>
     </file>
     <file>
-      <exclude_filemask/>
       <file_required>N</file_required>
-      <filemask/>
       <include_subfolders>N</include_subfolders>
       <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2025\ot-oca-1-quad-2025-versao-1.xlsx</name>
     </file>
     <file>
-      <exclude_filemask/>
       <file_required>N</file_required>
-      <filemask/>
       <include_subfolders>N</include_subfolders>
       <name>${PROJECT_DATA}\orcamentos_tematicos\crianca_adolescente\OCA_QUADRIMESTRE\2025\ot-oca-2-quad-2025-versao-1.xlsx</name>
     </file>
     <filefield>N</filefield>
-    <filename_Field/>
     <filter>
       <filterfiletype>all_files</filterfiletype>
     </filter>
@@ -276,8 +292,6 @@
     <limit>0</limit>
     <raiseAnExceptionIfNoFile>N</raiseAnExceptionIfNoFile>
     <rownum>N</rownum>
-    <rownum_field/>
-    <wildcard_Field/>
     <attributes/>
     <GUI>
       <xloc>272</xloc>
@@ -321,7 +335,7 @@
     <name>Quadrimestre_Ano</name>
     <type>ConcatFields</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -352,37 +366,8 @@
     <separator>_</separator>
     <attributes/>
     <GUI>
-      <xloc>752</xloc>
+      <xloc>784</xloc>
       <yloc>144</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>quadrimestre_ano  cadastrado?</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <compare>
-      <condition>
-        <conditions>
-</conditions>
-        <function>=</function>
-        <leftvalue>quadrimestre_ano</leftvalue>
-        <negated>N</negated>
-        <operator>-</operator>
-        <rightvalue>quad_ano_dw</rightvalue>
-      </condition>
-    </compare>
-    <send_false_to>D_TEMPO</send_false_to>
-    <attributes/>
-    <GUI>
-      <xloc>944</xloc>
-      <yloc>256</yloc>
     </GUI>
   </transform>
   <transform_error_handling>
